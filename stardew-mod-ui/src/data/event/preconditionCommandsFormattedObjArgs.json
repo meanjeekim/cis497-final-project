@@ -1,0 +1,565 @@
+[
+    {
+        "id": 0,
+        "type": "precondition",
+        "title": "A <dialogue ID>",
+        "description": "The special dialogue event with the given ID is not in progress. This can be a custom event ID, but these are the in-game IDs: cc_Begin, cc_Boulder, cc_Bridge, cc_Bus, cc_Complete, cc_Greenhouse, cc_Minecart, dumped_Girls, dumped_Guys, Introduction, joja_Begin, pamHouseUpgrade, pamHouseUpgradeAnonymous, secondChance_Girls, secondChance_Guys, shaneSaloon1, shaneSaloon2, willyCrabs.",
+        "command": "A",
+        "argNames": [
+            {
+                "argName": "dialogue ID",
+                "required": true,
+                "titleText": "Special dialogue event wiht ID <value> is not in progress"
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "type": "precondition",
+        "title": "Today is not a festival day.",
+        "description": "Today is not a festival day.",
+        "command": "F",
+        "argNames": []
+    },
+    {
+        "id": 2,
+        "type": "precondition",
+        "title": "U <day count>",
+        "description": "There are no festivals within the specified number of days from today.",
+        "command": "U",
+        "argNames": [
+            {
+                "argName": "day count",
+                "required": true,
+                "titleText": "No festivals within <value> days from today"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "type": "precondition",
+        "title": "d <day of week>",
+        "description": "Today is not one of the specified days (may specify multiple days). Valid values: Mon, Tue, Wed, Thu, Fri, Sat, Sun.",
+        "command": "d",
+        "argNames": [
+            {
+                "argName": "day of week",
+                "required": true,
+                "titleText": "Today is not <value>"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "type": "precondition",
+        "title": "r <number>",
+        "description": "A random probability check, where <number> is the probability between 0 and 1 (e.g. 0.2 for 20% chance).",
+        "command": "r",
+        "argNames": [
+            {
+                "argName": "number",
+                "required": true,
+                "titleText": "Triggered with probability <value>"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "type": "precondition",
+        "title": "v <name>",
+        "description": "The specified NPC is not invisible (regardless of whether they're on-screen).",
+        "command": "v",
+        "argNames": [
+            {
+                "argName": "name",
+                "required": true,
+                "titleText": "<value> is visible"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "type": "precondition",
+        "title": "w <weather>",
+        "description": "Current weather matches <weather>. Valid values: rainy, sunny.",
+        "command": "w",
+        "argNames": [
+            {
+                "argName": "weather",
+                "required": true,
+                "titleText": "Today's weather is <value>"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "type": "precondition",
+        "title": "y <year>",
+        "description": "If <year> is 1, must be in the first year. Otherwise, year must be at least this value.",
+        "command": "y",
+        "argNames": [
+            {
+                "argName": "year",
+                "required": true,
+                "titleText": "Is at least year <value>"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "type": "precondition",
+        "title": "z <season>",
+        "description": "Current season is not <season>.",
+        "command": "z",
+        "argNames": [
+            {
+                "argName": "season",
+                "required": true,
+                "titleText": "Current season is not <value>"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "type": "precondition",
+        "title": "D <name>",
+        "description": "Current player is dating the given NPC name.",
+        "command": "D",
+        "argNames": [
+            {
+                "argName": "name",
+                "required": true,
+                "titleText": "Player is dating <value>"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "type": "precondition",
+        "title": "Player has finished the Joja Warehouse",
+        "description": "Current player has finished the Joja Warehouse.",
+        "command": "J",
+        "argNames": []
+    },
+    {
+        "id": 11,
+        "type": "precondition",
+        "title": "Event is inside the Farmhouse and upgraded at least twice",
+        "description": "Event is in the FarmHouse and the FarmHouse has been upgraded at least twice (has nursery but not necessarily cellar).",
+        "command": "L",
+        "argNames": []
+    },
+    {
+        "id": 12,
+        "type": "precondition",
+        "title": "M <number>",
+        "description": "Current player has at least this much money.",
+        "command": "M",
+        "argNames": [
+            {
+                "argName": "number",
+                "required": true,
+                "titleText": "Player has at least <value> monies"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "type": "precondition",
+        "title": "O <name>",
+        "description": "Current player is married to that NPC.",
+        "command": "O",
+        "argNames": [
+            {
+                "argName": "name",
+                "required": true,
+                "titleText": "Player is married to <value>"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "type": "precondition",
+        "title": "S <secret note ID>",
+        "description": "Current player has seen the Secret Note with the given ID.",
+        "command": "S",
+        "argNames": [
+            {
+                "argName": "secret note ID",
+                "required": true,
+                "titleText": "Player has seen secret note with ID <value>"
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "type": "precondition",
+        "title": "a <x> <y>",
+        "description": "Current player is on that tile position.",
+        "command": "a",
+        "argNames": [
+            {
+                "argName": "x",
+                "required": true,
+                "titleText": "Player is not on tile (<value,"
+            },
+            {
+                "argName": "y",
+                "required": true,
+                "titleText": "<value>)"
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "type": "precondition",
+        "title": "b <number>",
+        "description": "Current player has reached the bottom floor of the Mines at least that many times.",
+        "command": "b",
+        "argNames": [
+            {
+                "argName": "number",
+                "required": true,
+                "titleText": "Player has reached bottom floor of Mines at least <value> times"
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "type": "precondition",
+        "title": "c <number>",
+        "description": "Current player has at least that many free inventory slots.",
+        "command": "c",
+        "argNames": [
+            {
+                "argName": "number",
+                "required": true,
+                "titleText": "Player has at least <value> free inventory slots"
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "type": "precondition",
+        "title": "e <event ID>",
+        "description": "Current player has seen the specified event (may contain multiple event IDs).",
+        "command": "e",
+        "argNames": [
+            {
+                "argName": "event ID",
+                "required": true,
+                "titleText": "Player has seen event with ID(s) <value>"
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "type": "precondition",
+        "title": "f <name> <number>",
+        "description": "Current player has at least <number> friendship points with the <name> NPC. Can specify multiple name and number pairs, in which case the player must meet all of them.",
+        "command": "f",
+        "argNames": [
+            {
+                "argName": "name",
+                "required": true,
+                "titleText": "Player's relationship with <value>"
+            },
+            {
+                "argName": "number",
+                "required": true,
+                "titleText": " is at least <value>"
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "type": "precondition",
+        "title": "g <gender>",
+        "description": "Current player is the specified gender (male or female).",
+        "command": "g",
+        "argNames": [
+            {
+                "argName": "gender",
+                "required": true,
+                "titleText": "Player identifies as <value>"
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "type": "precondition",
+        "title": "h <pet>",
+        "description": "Current player does not already have a pet, and their preference matches <pet> (\"cat\" or \"dog\").",
+        "command": "h",
+        "argNames": [
+            {
+                "argName": "pet",
+                "required": true,
+                "titleText": "Player doesn't have pet and prefers a <value>"
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "type": "precondition",
+        "title": "i <item ID>",
+        "description": "Current player has specified item in their inventory.",
+        "command": "i",
+        "argNames": [
+            {
+                "argName": "item ID",
+                "required": true,
+                "titleText": "Player has item with ID <value> in inventory"
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "type": "precondition",
+        "title": "j <number>",
+        "description": "Current player has played more than <number> days.",
+        "command": "j",
+        "argNames": [
+            {
+                "argName": "number",
+                "required": true,
+                "titleText": "Player has played more than <value> days"
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "type": "precondition",
+        "title": "k <event ID>",
+        "description": "Current player has not seen that event (may contain multiple event IDs).",
+        "command": "k",
+        "argNames": [
+            {
+                "argName": "event ID",
+                "required": true,
+                "titleText": "Player has not seen event with ID(s) <value>"
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "type": "precondition",
+        "title": "l <letter ID>",
+        "description": "Current player has not received that mail letter or non-mail flag.",
+        "command": "l",
+        "argNames": [
+            {
+                "argName": "letter ID",
+                "required": true,
+                "titleText": "Player has not received mail ID <value>"
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "type": "precondition",
+        "title": "m <number>",
+        "description": "Current player has earned at least this much money (regardless of how much they currently have).",
+        "command": "m",
+        "argNames": [
+            {
+                "argName": "number",
+                "required": true,
+                "titleText": "Player has earned at least <value> monies in lifetime"
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "type": "precondition",
+        "title": "n <letter ID>",
+        "description": "Current player has received that mail letter or non-mail flag.",
+        "command": "n",
+        "argNames": [
+            {
+                "argName": "letter ID",
+                "required": true,
+                "titleText": "Player has received letter with ID <value>"
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "type": "precondition",
+        "title": "o <name>",
+        "description": "Current player is not married to that NPC.",
+        "command": "o",
+        "argNames": [
+            {
+                "argName": "name",
+                "required": true,
+                "titleText": "Player is not married to <value>"
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "type": "precondition",
+        "title": "p <name>",
+        "description": "Specified NPC is in the current player's location.",
+        "command": "p",
+        "argNames": [
+            {
+                "argName": "name",
+                "required": true,
+                "titleText": "<value> is in the player's location"
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "type": "precondition",
+        "title": "q <dialogue ID>",
+        "description": "Current player has chosen the given answer in a dialogue. May contain multiple dialogue IDs, in which case they must all have been selected.",
+        "command": "q",
+        "argNames": [
+            {
+                "argName": "dialogue ID",
+                "required": true,
+                "titleText": "Player has chosen answer(s) with ID <value>"
+            }
+        ]
+    },
+    {
+        "id": 31,
+        "type": "precondition",
+        "title": "s <item ID> <number>",
+        "description": "Current player has shipped at least <number> of the specified item. Can specify multiple item and number pairs, in which case all of them must be met.",
+        "command": "s",
+        "argNames": [
+            {
+                "argName": "item ID",
+                "required": true,
+                "titleText": "Player has shipped the item(s) with ID <value>"
+            },
+            {
+                "argName": "number",
+                "required": true,
+                "titleText": " at least <value> times"
+            }
+        ]
+    },
+    {
+        "id": 32,
+        "type": "precondition",
+        "title": "t <min time> <max time>",
+        "description": "Current time is between between the specified times. Can range from 600 to 2600.",
+        "command": "t",
+        "argNames": [
+            {
+                "argName": "min time",
+                "required": true,
+                "titleText": "Current time is between <value>"
+            },
+            {
+                "argName": "max time",
+                "required": true,
+                "titleText": " and <value>"
+            }
+        ]
+    },
+    {
+        "id": 33,
+        "type": "precondition",
+        "title": "u <day of month>",
+        "description": "Current day of month is one of the specified values (may contain multiple days).",
+        "command": "u",
+        "argNames": [
+            {
+                "argName": "day of month",
+                "required": true,
+                "titleText": "Current day of month is one of <value>"
+            }
+        ]
+    },
+    {
+        "id": 34,
+        "type": "precondition",
+        "title": "x <letter ID>",
+        "description": "For the current player: mark this event as seen, add the specified letter to tomorrow's mail, then return false (so that nothing further happens). Use the format \"x letterid true\" to send the letter immediately.",
+        "command": "x",
+        "argNames": [
+            {
+                "argName": "letter ID",
+                "required": true
+            }
+        ]
+    },
+    {
+        "id": 35,
+        "type": "precondition",
+        "title": "Player has not finished the community center/seen the grand reopening.",
+        "description": "Host player has not finished the community center, or has not seen the grand reopening yet.",
+        "command": "C",
+        "argNames": []
+    },
+    {
+        "id": 36,
+        "type": "precondition",
+        "title": "Player is the host of multiplayer",
+        "description": "Current player is the host player.",
+        "command": "H",
+        "argNames": []
+    },
+    {
+        "id": 37,
+        "type": "precondition",
+        "title": "Hl <letter ID>",
+        "description": "Host player has not received that mail letter or non-mail flag.",
+        "command": "Hl",
+        "argNames": [
+            {
+                "argName": "letter ID",
+                "required": true,
+                "titleText": "Host player has not received mail with ID <value>"
+            }
+        ]
+    },
+    {
+        "id": 38,
+        "type": "precondition",
+        "title": "Hn <letter ID>",
+        "description": "Host player has received that mail letter or non-mail flag.",
+        "command": "Hn",
+        "argNames": [
+            {
+                "argName": "letter ID",
+                "required": true,
+                "titleText": "Host player has received mail with ID <value>"
+            }
+        ]
+    },
+    {
+        "id": 39,
+        "type": "precondition",
+        "title": "*l <letter ID>",
+        "description": "Host player and current player have not received that mail letter or non-mail flag.",
+        "command": "*l",
+        "argNames": [
+            {
+                "argName": "letter ID",
+                "required": true,
+                "titleText": "Host player and current player has not received mail with ID <value>"
+            }
+        ]
+    },
+    {
+        "id": 40,
+        "type": "precondition",
+        "title": "*n <letter ID>",
+        "description": "Host player and current player have received that mail letter or non-mail flag.",
+        "command": "*n",
+        "argNames": [
+            {
+                "argName": "letter ID",
+                "required": true,
+                "titleText": "Host player and current have received mail with ID <value>"
+            }
+        ]
+    }
+]

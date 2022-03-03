@@ -1,0 +1,1970 @@
+[
+    {
+        "id": 0,
+        "type": "event",
+        "title": "addBigProp <x> <y> <object ID>",
+        "description": "Adds an object at the specified tile from the TileSheets\\Craftables.png sprite sheet.",
+        "command": "addBigProp",
+        "argNames": [
+            {
+                "argName": "x",
+                "required": true,
+                "titleText": "Set tile (<value>,"
+            },
+            {
+                "argName": "y",
+                "required": true,
+                "titleText": "<value>)"
+            },
+            {
+                "argName": "object ID",
+                "required": true,
+                "titleText": "to the big prop object with ID `<value>`"
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "type": "event",
+        "title": "addConversationTopic <ID> [length]",
+        "description": "Starts a conversation topic with the given ID and day length (or 4 days if no length given).",
+        "command": "addConversationTopic",
+        "argNames": [
+            {
+                "argName": "ID",
+                "required": true,
+                "titleText": "Add conversation topic with ID `<value>`"
+            },
+            {
+                "argName": "length",
+                "required": false,
+                "titleText": " for the next <value> days~ for the next 4 days"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "type": "event",
+        "title": "addCookingRecipe <recipe>",
+        "description": "Adds the specified cooking recipe to the player.",
+        "command": "addCookingRecipe",
+        "argNames": [
+            {
+                "argName": "recipe",
+                "required": true,
+                "titleText": "Player learns how to cook <value>"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "type": "event",
+        "title": "addCraftingRecipe <recipe>",
+        "description": "Adds the specified crafting recipe to the player.",
+        "command": "addCraftingRecipe",
+        "argNames": [
+            {
+                "argName": "recipe",
+                "required": true,
+                "titleText": "Player learns how to craft <value>"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "type": "event",
+        "title": "addFloorProp <prop index> <x> <y> [solid width] [solid height] [display height]",
+        "description": "Add a non-solid prop from the current festival texture. Default solid width/height is 1. Default display height is solid height.",
+        "command": "addFloorProp",
+        "argNames": [
+            {
+                "argName": "prop index",
+                "required": true,
+                "titleText": "Add floor prop object wiht ID `<value>`"
+            },
+            {
+                "argName": "x",
+                "required": true,
+                "titleText": " on tile (<value>,"
+            },
+            {
+                "argName": "y",
+                "required": true,
+                "titleText": "<value>)"
+            },
+            {
+                "argName": "solid width",
+                "required": false,
+                "titleText": " with <value> width~"
+            },
+            {
+                "argName": "solid height",
+                "required": false,
+                "titleText": " <value> height~"
+            },
+            {
+                "argName": "display height",
+                "required": false,
+                "titleText": " and <value> display height~"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "type": "event",
+        "title": "addLantern <row in texture> <x> <y> <light radius>",
+        "description": "Adds a glowing temporary sprite at the specified tile from the Maps\\springobjects.png sprite sheet. A light radius of 0 just places the sprite.",
+        "command": "addLantern",
+        "argNames": [
+            {
+                "argName": "row in texture",
+                "required": true,
+                "titleText": "Add the lantern from the texture's row <value>"
+            },
+            {
+                "argName": "x",
+                "required": true,
+                "titleText": " and position (<value>,"
+            },
+            {
+                "argName": "y",
+                "required": true,
+                "titleText": "<value>)"
+            },
+            {
+                "argName": "light radius",
+                "required": true,
+                "titleText": " with a light radius of <value>"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "type": "event",
+        "title": "addMailReceived <letter ID>",
+        "description": "Set a letter as received.",
+        "command": "addMailReceived",
+        "argNames": [
+            {
+                "argName": "letter ID",
+                "required": true,
+                "titleText": "Set letter with ID `<value>` as received"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "type": "event",
+        "title": "addObject <x> <y> <sprite index> [layer]",
+        "description": "Adds a temporary sprite at the specified tile from the Maps\\springobjects.png sprite sheet.",
+        "command": "addObject",
+        "argNames": [
+            {
+                "argName": "x",
+                "required": true,
+                "titleText": "At position (<value>,"
+            },
+            {
+                "argName": "y",
+                "required": true,
+                "titleText": "<value>),"
+            },
+            {
+                "argName": "sprite index",
+                "required": true,
+                "titleText": " add the sprite with index <value>"
+            },
+            {
+                "argName": "layer",
+                "required": false,
+                "titleText": " from layer <value>~"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "type": "event",
+        "title": "addProp <prop index> <x> <y> [solid width] [solid height] [display height]",
+        "description": "Add a solid prop from the current festival texture. Default solid width/height is 1. Default display height is solid height.",
+        "command": "addProp",
+        "argNames": [
+            {
+                "argName": "prop index",
+                "required": true
+            },
+            {
+                "argName": "x",
+                "required": true
+            },
+            {
+                "argName": "y",
+                "required": true
+            },
+            {
+                "argName": "solid width",
+                "required": false
+            },
+            {
+                "argName": "solid height",
+                "required": false
+            },
+            {
+                "argName": "display height",
+                "required": false
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "type": "event",
+        "title": "addQuest <quest ID>",
+        "description": "Add the specified quest to the quest log.",
+        "command": "addQuest",
+        "argNames": [
+            {
+                "argName": "quest ID",
+                "required": true,
+                "titleText": "Add quest with ID `<value>` to the log"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "type": "event",
+        "title": "addTemporaryActor <character> <sprite width> <sprite height> <tile x> <tile y> <facing> [breather] [Character|Animal|Monster] [animal name]",
+        "description": "Add a temporary actor. 'breather' is boolean. The category determines where the texture will be loaded from, default is Character. Animal name only applies to animal.",
+        "command": "addTemporaryActor",
+        "argNames": [
+            {
+                "argName": "character",
+                "required": true,
+                "titleText": "Add <value>"
+            },
+            {
+                "argName": "sprite width",
+                "required": true,
+                "titleText": " with <value> width"
+            },
+            {
+                "argName": "sprite height",
+                "required": true,
+                "titleText": " and <value> height"
+            },
+            {
+                "argName": "tile x",
+                "required": true,
+                "titleText": "at tile (<value>,"
+            },
+            {
+                "argName": "tile y",
+                "required": true,
+                "titleText": "<value>)"
+            },
+            {
+                "argName": "facing",
+                "required": true,
+                "titleText": " facing <value>"
+            },
+            {
+                "argName": "breather",
+                "required": false,
+                "titleText": " and breather as <value>~"
+            },
+            {
+                "argName": "Character|Animal|Monster",
+                "required": false,
+                "titleText": " from the <value> folder~"
+            },
+            {
+                "argName": "animal name",
+                "required": false,
+                "titleText": " with the name <value>~"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "type": "event",
+        "title": "addToTable <x> <y> <object ID>",
+        "description": "Places on object on the furniture at a position. If the location is FarmHouse, then it will always be placed on the initial table.",
+        "command": "addToTable",
+        "argNames": [
+            {
+                "argName": "x",
+                "required": true,
+                "titleText": "At tile (<value>,"
+            },
+            {
+                "argName": "y",
+                "required": true,
+                "titleText": "<value>),"
+            },
+            {
+                "argName": "object ID",
+                "required": true,
+                "titleText": " place the object with ID `<value>`"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "type": "event",
+        "title": "addTool <Sword|Wand>",
+        "description": "Adds either a Battered Sword or Return Scepter to the player's inventory. The Battered Sword is unobtainable in vanilla and is incomplete and not implemented.",
+        "command": "addTool",
+        "argNames": [
+            {
+                "argName": "Sword|Wand",
+                "required": true,
+                "titleText": "Add <value> to the player's inventory"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "type": "event",
+        "title": "advancedMove <npc> <loop> <x y>+",
+        "description": "Set multiple movements for an NPC.  You can set True to have NPC walk the path continuously. Example: /advancedMove Robin false 0 3 2 0 0 2 -2 0 0 -2 2 0/",
+        "command": "advancedMove",
+        "argNames": [
+            {
+                "argName": "npc",
+                "required": true,
+                "titleText": "Move <value>"
+            },
+            {
+                "argName": "loop",
+                "required": true,
+                "titleText": " (looped?: <value>)"
+            },
+            {
+                "argName": "x y",
+                "required": true,
+                "list": true,
+                "titleText": "with the following path: (<value>)"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "type": "event",
+        "title": "ambientLight <r> <g> <b>",
+        "description": "Modifies the ambient light level, with RGB values from 0 to 255. Note that it works by removing colors from the existing light ambience, so ambientLight 1 80 80 would reduce green and blue and leave the light with a reddish hue.",
+        "command": "ambientLight",
+        "argNames": [
+            {
+                "argName": "r",
+                "required": true,
+                "titleText": "Remove colors from existing ambience RGB(<value>,"
+            },
+            {
+                "argName": "g",
+                "required": true,
+                "titleText": "<value>,"
+            },
+            {
+                "argName": "b",
+                "required": true,
+                "titleText": "<value>)"
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "type": "event",
+        "title": "animalNaming",
+        "description": "Show the animal naming menu if no other menu is open. Uses the current location as Coop. Appears to only work for 'hatched' animals.",
+        "command": "animalNaming",
+        "argNames": []
+    },
+    {
+        "id": 16,
+        "type": "event",
+        "title": "animate <actor> <flip> <loop> <frame duration> <frames...>",
+        "description": "Animate a named actor, using one or more <frames> from their sprite sheet, for <frame duration> milliseconds per frame. <frames> are indexed numerically, based on 16x32 peices of the image. This index increases as you go from left to right, starting from 0. <flip> indicates whether to flip the sprites along the Y axis; <loop> indicates whether to repeat the animation until stopAnimation is used.",
+        "command": "animate",
+        "argNames": [
+            {
+                "argName": "actor",
+                "required": true,
+                "titleText": "Animate <value>"
+            },
+            {
+                "argName": "flip",
+                "required": true,
+                "titleText": " <value> along the y-axis"
+            },
+            {
+                "argName": "loop",
+                "required": true,
+                "titleText": " (looped?: <value>)"
+            },
+            {
+                "argName": "frame duration",
+                "required": true,
+                "titleText": " for <value> milliseconds per frame"
+            },
+            {
+                "argName": "frames...",
+                "required": true,
+                "titleText": " for the following frames: <value>"
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "type": "event",
+        "title": "attachCharacterToTempSprite <actor>",
+        "description": "Attach an actor to the most recent temporary sprite.",
+        "command": "attachCharacterToTempSprite",
+        "argNames": [
+            {
+                "argName": "actor",
+                "required": true,
+                "titleText": "Attach <value> to the most recent temporary sprite"
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "type": "event",
+        "title": "awardFestivalPrize",
+        "description": "Awards the festival prize to the winner for the easter egg hunt and ice fishing contest.",
+        "command": "awardFestivalPrize",
+        "argNames": []
+    },
+    {
+        "id": 19,
+        "type": "event",
+        "title": "awardFestivalPrize <item type>",
+        "description": "Awards the specified item to the player. Possible item types are \"pan\", \"sculpture\", \"rod\", \"sword\", \"hero\", \"joja\", \"slimeegg\", \"emilyClothes\", and \"jukebox\".",
+        "command": "awardFestivalPrize",
+        "argNames": [
+            {
+                "argName": "item type",
+                "required": true,
+                "titleText": "Award the item with ID `<value>` to the player"
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "type": "event",
+        "title": "The following event commands until `endSimultaneousCommand` will all be done simultaneously",
+        "description": "This command states that the next event commands will all be done at the same time.  Must also have endSimultaneousCommand after the commands needed to execute at the same time.",
+        "command": "beginSimultaneousCommand",
+        "argNames": []
+    },
+    {
+        "id": 21,
+        "type": "event",
+        "title": "broadcastEvent",
+        "description": "TODO: Explain broadcastEvent.",
+        "command": "broadcastEvent",
+        "argNames": []
+    },
+    {
+        "id": 22,
+        "type": "event",
+        "title": "Ask the question to adopt a pet",
+        "description": "Trigger question about adopting your pet.",
+        "command": "catQuestion",
+        "argNames": []
+    },
+    {
+        "id": 23,
+        "type": "event",
+        "title": "cave",
+        "description": "Trigger the question for the farm cave type. This will work again later, however changing from bats to mushrooms will not remove the mushroom spawning objects.",
+        "command": "cave",
+        "argNames": []
+    },
+    {
+        "id": 24,
+        "type": "event",
+        "title": "changeLocation <location>",
+        "description": "Change to another location and run the remaining event script there.",
+        "command": "changeLocation",
+        "argNames": [
+            {
+                "argName": "location",
+                "required": true,
+                "titleText": "Change location to <value>"
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "type": "event",
+        "title": "changeMapTile <layer> <x> <y> <tile index>",
+        "description": "Change the specified tile to a particular value.",
+        "command": "changeMapTile",
+        "argNames": [
+            {
+                "argName": "layer",
+                "required": true,
+                "titleText": "Change the tile on layer <value>"
+            },
+            {
+                "argName": "x",
+                "required": true,
+                "titleText": " at tile (<value>,"
+            },
+            {
+                "argName": "y",
+                "required": true,
+                "titleText": "<value>)"
+            },
+            {
+                "argName": "tile index",
+                "required": true,
+                "titleText": " to the tile at index <value>"
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "type": "event",
+        "title": "changePortrait <npc> <portrait>",
+        "description": "Change the NPC's portrait to be from \"Portraits/<actor>_<portrait>\".",
+        "command": "changePortrait",
+        "argNames": [
+            {
+                "argName": "npc",
+                "required": true,
+                "titleText": "Change <value>'s portrait to "
+            },
+            {
+                "argName": "portrait",
+                "required": true,
+                "titleText": "<value>"
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "type": "event",
+        "title": "changeSprite <actor> <sprite>",
+        "description": "Change the actor's sprite to be from \"Characters/<actor>_<sprite>\".",
+        "command": "changeSprite",
+        "argNames": [
+            {
+                "argName": "actor",
+                "required": true,
+                "titleText": "Change <value>'s sprite to "
+            },
+            {
+                "argName": "sprite",
+                "required": true,
+                "titleText": "<value>"
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "type": "event",
+        "title": "changeToTemporaryMap <map> [pan]",
+        "description": "Change the location to a temporary one loaded from the map file specified by <map>. If the [pan] argument is omitted, also pan to tile coordinates 0, 0 on the new map. If any value is given for [pan], no panning occurs.",
+        "command": "changeToTemporaryMap",
+        "argNames": [
+            {
+                "argName": "map",
+                "required": true,
+                "titleText": "Change the map temporarily to <value>"
+            },
+            {
+                "argName": "pan",
+                "required": false,
+                "titleText": "~panning to tile (0,0)"
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "type": "event",
+        "title": "changeYSourceRectOffset <npc> <offset>",
+        "description": "Changes the NPC's vertical texture offset. Example: changeYSourceRectOffset Abigail 96 will offset her sprite sheet, showing her looking left instead of down. This persists for the rest of the event. This is only used in Emily's Clothing Therapy event to display the various outfits properly.",
+        "command": "changeYSourceRectOffset",
+        "argNames": [
+            {
+                "argName": "npc",
+                "required": true
+            },
+            {
+                "argName": "offset",
+                "required": true
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "type": "event",
+        "title": "characterSelect",
+        "description": "Seemingly unused. Sets Game1.gameMode to 5 and Game1.menuChoice = 0.",
+        "command": "characterSelect",
+        "argNames": []
+    },
+    {
+        "id": 31,
+        "type": "event",
+        "title": "cutscene <cutscene>",
+        "description": "Activate a cutscene. See cutscene list.",
+        "command": "cutscene",
+        "argNames": [
+            {
+                "argName": "cutscene",
+                "required": true,
+                "titleText": "Activate <value> cutscene"
+            }
+        ]
+    },
+    {
+        "id": 32,
+        "type": "event",
+        "title": "doAction <x> <y>",
+        "description": "Acts as if the player had clicked the specified x/y coordinate and triggers any relevant action. It is commonly used to open doors from inside events, but it can be used for other purposes. If you use it on an NPC you will talk to them, and if the player is holding an item they will give that item as a gift. doAction activates objects in the main game world (their actual location outside of the event), so activating NPCs like this is very tricky, and their reaction varies depending on what the player is holding.",
+        "command": "doAction",
+        "argNames": [
+            {
+                "argName": "x",
+                "required": true,
+                "titleText": "Simulate clicking on coordinates (<value>,"
+            },
+            {
+                "argName": "y",
+                "required": true,
+                "titleText": "<value>)"
+            }
+        ]
+    },
+    {
+        "id": 33,
+        "type": "event",
+        "title": "dump <group>",
+        "description": "Starts the special \"cold shoulder\" and \"second chance\" dialogue events for the given group (women if group is girls and men if it is anything else.) The cold shoulder event has an id of dumped_Girls or dumped_Guys and lasts 7 days; the second chance event has an id of secondChance_Girls or secondChance_Guys and lasts 14 days. During open beta testing of version 1.3 there was a second parameter which determined the amount of hearts lost, but support for that parameter was removed before release.",
+        "command": "dump",
+        "argNames": [
+            {
+                "argName": "group",
+                "required": true
+            }
+        ]
+    },
+    {
+        "id": 34,
+        "type": "event",
+        "title": "endSimultaneousCommand",
+        "description": "Sets the end of all commands that are to be done simultaneously.  Format: beginSimultaneousCommand/<Event Commands>.../endSimultaneousCommand",
+        "command": "endSimultaneousCommand",
+        "argNames": []
+    },
+    {
+        "id": 35,
+        "type": "event",
+        "title": "elliotbooktalk",
+        "description": "Elliot book talk.",
+        "command": "elliotbooktalk",
+        "argNames": []
+    },
+    {
+        "id": 36,
+        "type": "event",
+        "title": "emote <actor> <emote ID>",
+        "description": "Make the given NPC name perform an emote, which is a little icon shown above the NPC's head. Emotes are stored in Content\\TileSheets\\emotes.xnb (see list of emotes).",
+        "command": "emote",
+        "argNames": [
+            {
+                "argName": "actor",
+                "required": true,
+                "titleText": "<value> emotes with "
+            },
+            {
+                "argName": "emote ID",
+                "required": true,
+                "titleText": "<value>"
+            }
+        ]
+    },
+    {
+        "id": 37,
+        "type": "event",
+        "title": "end",
+        "description": "Ends the current event by fading out, then resumes the game world and places the player on the square where they entered the zone. All end parameters do this by default unless otherwise stated.",
+        "command": "end",
+        "argNames": []
+    },
+    {
+        "id": 38,
+        "type": "event",
+        "title": "end bed",
+        "description": "Same as end, but warps the player to the x/y coordinate of their most recent bed. This does not warp them to the farmhouse, only to the x/y coordinate of the bed regardless of map.",
+        "command": "end bed",
+        "argNames": []
+    },
+    {
+        "id": 39,
+        "type": "event",
+        "title": "end beginGame",
+        "description": "Used only during the introduction sequence in the bus stop event. It sets the game mode to playingGameMode, warps the player to the farmhouse (9, 9), ends the current event, and starts a new day.",
+        "command": "end beginGame",
+        "argNames": []
+    },
+    {
+        "id": 40,
+        "type": "event",
+        "title": "end credits",
+        "description": "Not used in any normal events. Clears debris weather, changes the music to wedding music, sets game mode to creditsMode and ends the current event.",
+        "command": "end credits",
+        "argNames": []
+    },
+    {
+        "id": 41,
+        "type": "event",
+        "title": "end dialogue <NPC> <\"Text for next chat\">",
+        "description": "Same as end, and additionally clears the existing NPC dialogue for the day and replaces it with the line(s) specified at the end of the command. Example usage: end dialogue Abigail \"It was fun talking to you today.$h\"",
+        "command": "end dialogue",
+        "argNames": [
+            {
+                "argName": "NPC",
+                "required": true,
+                "titleText": "Ends the event and clears out <value>'s dialogue"
+            },
+            {
+                "argName": "\"Text for next chat\"",
+                "required": true,
+                "titleText": " and replaces it with <value>"
+            }
+        ]
+    },
+    {
+        "id": 42,
+        "type": "event",
+        "title": "end dialogueWarpOut <NPC> <\"Text for next chat\">",
+        "description": "See end dialogue and end warpOut.",
+        "command": "end dialogueWarpOut",
+        "argNames": [
+            {
+                "argName": "NPC",
+                "required": true,
+                "titleText": "Ends the event and clears out <value>'s dialogue"
+            },
+            {
+                "argName": "\"Text for next chat\"",
+                "required": true,
+                "titleText": " and replaces it with <value>. Player will warp to the endpoint of the first warp of the current location."
+            }
+        ]
+    },
+    {
+        "id": 43,
+        "type": "event",
+        "title": "end invisible <NPC>",
+        "description": "Same as end, and additionally turns the specified NPC invisible (cannot be interacted with until the next day).",
+        "command": "end invisible",
+        "argNames": [
+            {
+                "argName": "NPC",
+                "required": true,
+                "titleText": "Ends the event and turns <value> invisible, who will not be able to be interacted with until the next day."
+            }
+        ]
+    },
+    {
+        "id": 44,
+        "type": "event",
+        "title": "end invisibleWarpOut <NPC>",
+        "description": "See end invisible and end warpOut.",
+        "command": "end invisibleWarpOut",
+        "argNames": [
+            {
+                "argName": "NPC",
+                "required": true,
+                "titleText": "Ends the event and turns <value> invisible. The player will also be warped to the endpoint of the first warp of the current location."
+            }
+        ]
+    },
+    {
+        "id": 45,
+        "type": "event",
+        "title": "Ends both the event and the day",
+        "description": "Ends both the event and the day (warping player to their bed, saving the game, selling everything in the shipping box, etc).",
+        "command": "end newDay",
+        "argNames": []
+    },
+    {
+        "id": 46,
+        "type": "event",
+        "title": "end position <x> <y>",
+        "description": "Same as end, and additionally warps the player to the map coordinates specified in x y.",
+        "command": "end position",
+        "argNames": [
+            {
+                "argName": "x",
+                "required": true,
+                "titleText": "Ends the event and warps the player to tile (<value>,"
+            },
+            {
+                "argName": "y",
+                "required": true,
+                "titleText": "<value>)"
+            }
+        ]
+    },
+    {
+        "id": 47,
+        "type": "event",
+        "title": "Ends the event and warps the player to the endpoint of the first warp of the current location",
+        "description": "Same as end, and additionally finds the first warp out of the current location (second warp if male and in the bathhouse), and warps the player to its endpoint.",
+        "command": "end warpOut",
+        "argNames": []
+    },
+    {
+        "id": 48,
+        "type": "event",
+        "title": "end wedding",
+        "description": "Used only in the hardcoded wedding event. Changes the character's clothes back to normal, sets Lewis' post-event chat to \"That was a beautiful ceremony. Congratulations!$h\", and warps the player to their farm.",
+        "command": "end wedding",
+        "argNames": []
+    },
+    {
+        "id": 49,
+        "type": "event",
+        "title": "extendSourceRect <actor> reset",
+        "description": "Resets the actors sprite.",
+        "command": "extendSourceRect",
+        "argNames": [
+            {
+                "argName": "actor",
+                "required": true,
+                "titleText": "Resets <value>'s sprite"
+            },
+            {
+                "argName": " reset",
+                "required": true
+            }
+        ]
+    },
+    {
+        "id": 50,
+        "type": "event",
+        "title": "extendSourceRect <actor> <horizontal> <vertical> [ignoreUpdates]",
+        "description": "TODO: Explain Character.extendSourceRect",
+        "command": "extendSourceRect",
+        "argNames": [
+            {
+                "argName": "actor",
+                "required": true
+            },
+            {
+                "argName": "horizontal",
+                "required": true
+            },
+            {
+                "argName": "vertical",
+                "required": true
+            },
+            {
+                "argName": "ignoreUpdates",
+                "required": false
+            }
+        ]
+    },
+    {
+        "id": 51,
+        "type": "event",
+        "title": "eyes <eyes> <blink>",
+        "description": "Change the player's eyes. Eyes is represented by and Integer from 0 - 5 (open, closed, right, left, half closed, wide open).  Blink is a timer that is represented with a negative number. -1000 is the default timer.",
+        "command": "eyes",
+        "argNames": [
+            {
+                "argName": "eyes",
+                "required": true,
+                "titleText": "Change the player's eyes to state <value>"
+            },
+            {
+                "argName": "blink",
+                "required": true,
+                "titleText": " and sets the blink timer to <value>"
+            }
+        ]
+    },
+    {
+        "id": 52,
+        "type": "event",
+        "title": "faceDirection <actor> <direction> [continue]",
+        "description": "Make a named NPC face a direction. If no parameter is supplied for [continue], the game will pause.",
+        "command": "faceDirection",
+        "argNames": [
+            {
+                "argName": "actor",
+                "required": true,
+                "titleText": "<value>"
+            },
+            {
+                "argName": "direction",
+                "required": true,
+                "titleText": "faces <value>"
+            },
+            {
+                "argName": "continue",
+                "required": false,
+                "titleText": "and pauses~"
+            }
+        ]
+    },
+    {
+        "id": 53,
+        "type": "event",
+        "title": "fade [unfade]",
+        "description": "Fades out to black if no parameter is supplied. If the parameter is unfade (not true), fades in from black.",
+        "command": "fade",
+        "argNames": [
+            {
+                "argName": "unfade?",
+                "required": false,
+                "titleText": "Fade in from black~Fade out to black"
+            }
+        ]
+    },
+    {
+        "id": 54,
+        "type": "event",
+        "title": "farmerAnimation <anim>",
+        "description": "Briefly sets the farmer's sprite to <anim> for a variable (depending on sprite) interval. Only used once in vanilla events. Using showFrame farmer <sprite> twice (to set a new frame and back) is more powerful as it lets you control the interval using pause n.",
+        "command": "farmerAnimation",
+        "argNames": [
+            {
+                "argName": "anim",
+                "required": true,
+                "titleText": "Set the player's sprite to <value> for a variable interval"
+            }
+        ]
+    },
+    {
+        "id": 55,
+        "type": "event",
+        "title": "farmerEat <object ID>",
+        "description": "Make the player eat an object",
+        "command": "farmerEat",
+        "argNames": [
+            {
+                "argName": "object ID",
+                "required": true,
+                "titleText": "Player eats object with ID `<value>`"
+            }
+        ]
+    },
+    {
+        "id": 56,
+        "type": "event",
+        "title": "fork [req] <event ID>",
+        "description": "End the current command script and starts a different script with the given ID, but only if the [req] condition is met. (Example: /fork choseWizard finalBossWizard in the \"Necromancer\" script of Sebastian's 6-heart event.) The [req] condition can be a mail ID or dialogue answer ID; if not specified, it checks if the specialEventVariable1 variable was set (e.g. by a question event command or %fork dialogue command). The new script should have the same format as a normal event script, but without the mandatory three start fields.",
+        "command": "fork",
+        "argNames": [
+            {
+                "argName": "[req]",
+                "required": false,
+                "titleText": "If <value>, ~Check specialEventVariable1 then"
+            },
+            {
+                "argName": "event ID",
+                "required": true,
+                "titleText": "start script with ID `<value>`"
+            }
+        ]
+    },
+    {
+        "id": 57,
+        "type": "event",
+        "title": "friendship <npc> <amount>",
+        "description": "Add the given number of friendship points with the named NPC. (There are 250 points per heart.)",
+        "command": "friendship",
+        "argNames": [
+            {
+                "argName": "npc",
+                "required": true,
+                "titleText": "Increase friendship with <value> "
+            },
+            {
+                "argName": "amount",
+                "required": true,
+                "titleText": "by <value> points"
+            }
+        ]
+    },
+    {
+        "id": 58,
+        "type": "event",
+        "title": "globalFade [speed]",
+        "description": "Fade to black at a particular speed (default 0.007). If no speed is specified, the event will continue immediately; otherwise, it will continue after the fade is finished. The fade effect disappears when this command is done; to avoid that, use the viewport command to move the camera off-screen.",
+        "command": "globalFade",
+        "argNames": [
+            {
+                "argName": "speed",
+                "required": false,
+                "titleText": "Fade to black with speed <value>~Fade to black with speed 0.007"
+            }
+        ]
+    },
+    {
+        "id": 59,
+        "type": "event",
+        "title": "globalFadeToClear [speed]",
+        "description": "Fade to clear (unfade?) at a particular speed (default 0.007). If no speed is specified, the event will continue immediately; otherwise, it will continue after the fade is finished.",
+        "command": "globalFadeToClear",
+        "argNames": [
+            {
+                "argName": "speed",
+                "required": false,
+                "titleText": "Unfade with speed <value>~Unfade with speed 0.007"
+            }
+        ]
+    },
+    {
+        "id": 60,
+        "type": "event",
+        "title": "glow <r> <g> <b> <hold>",
+        "description": "Make the screen glow once, fading into and out of the <r> <g> <b> values over the course of a second. If <hold> is true it will fade to and hold that color until stopGlowing is used.",
+        "command": "glow",
+        "argNames": [
+            {
+                "argName": "r",
+                "required": true,
+                "titleText": "Glow with RGB(<value>,"
+            },
+            {
+                "argName": "g",
+                "required": true,
+                "titleText": "<value>,"
+            },
+            {
+                "argName": "b",
+                "required": true,
+                "titleText": "<value>)"
+            },
+            {
+                "argName": "hold",
+                "required": false,
+                "titleText": " until 'stopGlowing' command is used~ and unfade"
+            }
+        ]
+    },
+    {
+        "id": 61,
+        "type": "event",
+        "title": "grandpaCandles",
+        "description": "Do grandpa candles",
+        "command": "grandpaCandles",
+        "argNames": []
+    },
+    {
+        "id": 62,
+        "type": "event",
+        "title": "grandpaEvaluation",
+        "description": "Do grandpa evaluation",
+        "command": "grandpaEvaluation",
+        "argNames": []
+    },
+    {
+        "id": 63,
+        "type": "event",
+        "title": "grandpaEvaluation2",
+        "description": "Do grandpa evaluation (manually resummoned)",
+        "command": "grandpaEvaluation2",
+        "argNames": []
+    },
+    {
+        "id": 64,
+        "type": "event",
+        "title": "halt",
+        "description": "Make everyone stop.",
+        "command": "halt",
+        "argNames": []
+    },
+    {
+        "id": 65,
+        "type": "event",
+        "title": "hospitaldeath",
+        "description": "",
+        "command": "hospitaldeath",
+        "argNames": []
+    },
+    {
+        "id": 66,
+        "type": "event",
+        "title": "ignoreCollisions <character ID>",
+        "description": "Make a character ignore collisions when moving for the remainder of the event. For example, they'll walk through walls if needed to reach their destination. The character ID can be farmer or an NPC name like Abigail.",
+        "command": "ignoreCollisions",
+        "argNames": [
+            {
+                "argName": "character ID",
+                "required": true,
+                "titleText": "<value> will ignore any collisions for the rest of the event"
+            }
+        ]
+    },
+    {
+        "id": 67,
+        "type": "event",
+        "title": "itemAboveHead [type]",
+        "description": "Show an item above the player's head. The [type] can be \"pan\", \"hero\", \"sculpture\", \"joja\", \"slimeEgg\", \"rod\", \"sword\", or \"ore\". If no item is specified, then they will 'hold' nothing?",
+        "command": "itemAboveHead",
+        "argNames": [
+            {
+                "argName": "type",
+                "required": false,
+                "titleText": "Show the item <value> above the player's head"
+            }
+        ]
+    },
+    {
+        "id": 68,
+        "type": "event",
+        "title": "jump <actor> [intensity]",
+        "description": "Make a the named NPC jump. The default intensity is 8.",
+        "command": "jump",
+        "argNames": [
+            {
+                "argName": "actor",
+                "required": true,
+                "titleText": "<value> jumps"
+            },
+            {
+                "argName": "intensity",
+                "required": false,
+                "titleText": " with intensity <value>"
+            }
+        ]
+    },
+    {
+        "id": 69,
+        "type": "event",
+        "title": "loadActors <layer>",
+        "description": "Load the actors from a layer in the map file.",
+        "command": "loadActors",
+        "argNames": [
+            {
+                "argName": "layer",
+                "required": true,
+                "titleText": "Load the actors from the <value> layer in the map file"
+            }
+        ]
+    },
+    {
+        "id": 70,
+        "type": "event",
+        "title": "makeInvisible <x> <y> [x-dimension] [y-dimension]",
+        "description": "Temporarily hides selected objects or terrain features: the tile(s) will become passable for the duration of the event. Useful for clearing a walking area during events, especially in the FarmHouse. (Example: /makeInvisible 8 14 hides any object or terrain feature at tile 8, 14 in the current map.) The optional [x-dimension] and [y-dimension] arguments allow you to specify a larger area to be cleared. (Example: /makeInvisible 68 36 13 7 in Leah's 14-heart event clears a 13 \u00d7 7 tile rectangular area with the top-left corner at coordinate 68, 36.)",
+        "command": "makeInvisible",
+        "argNames": [
+            {
+                "argName": "x",
+                "required": true
+            },
+            {
+                "argName": "y",
+                "required": true
+            },
+            {
+                "argName": "x-dimension",
+                "required": false
+            },
+            {
+                "argName": "y-dimension",
+                "required": false
+            }
+        ]
+    },
+    {
+        "id": 71,
+        "type": "event",
+        "title": "mail <letter ID>",
+        "description": "Queue a letter to be received tomorrow (see Content\\Data\\mail.xnb for available mail).",
+        "command": "mail",
+        "argNames": [
+            {
+                "argName": "letter ID",
+                "required": true,
+                "titleText": "Send mail with ID `<value>` tomorrow"
+            }
+        ]
+    },
+    {
+        "id": 72,
+        "type": "event",
+        "title": "message <\"text\">",
+        "description": "Show a dialogue box (no speaker). See dialogue format for the <text> format.",
+        "command": "message",
+        "argNames": [
+            {
+                "argName": "\"text\"",
+                "required": true,
+                "titleText": "Show a dialogue box saying <value>"
+            }
+        ]
+    },
+    {
+        "id": 73,
+        "type": "event",
+        "title": "minedeath",
+        "description": "TODO.",
+        "command": "minedeath",
+        "argNames": []
+    },
+    {
+        "id": 74,
+        "type": "event",
+        "title": "move <actor> <x> <y> <facing> [continue]",
+        "description": "Make a named NPC move by the given tile offset from their current position (along one axis only), and face the given direction when they're done. To move along multiple axes, you must specify multiple move commands. By default the event pauses while a move command is occurring, but if <continue> is set to true the movement is asynchronous and will run simultaneously with other event commands.",
+        "command": "move",
+        "argNames": [
+            {
+                "argName": "actor",
+                "required": true,
+                "titleText": "<value> moves"
+            },
+            {
+                "argName": "x",
+                "required": true,
+                "titleText": " <value> tiles on the x-axis"
+            },
+            {
+                "argName": "y",
+                "required": true,
+                "titleText": " <value> tiles on the y-axis"
+            },
+            {
+                "argName": "facing",
+                "required": true,
+                "titleText": " then face <value>"
+            },
+            {
+                "argName": "continue",
+                "required": false,
+                "titleText": " without pausing~ while pausing"
+            }
+        ]
+    },
+    {
+        "id": 75,
+        "type": "event",
+        "title": "pause <duration>",
+        "description": "Pause the game for the given number of milliseconds.",
+        "command": "pause",
+        "argNames": [
+            {
+                "argName": "duration",
+                "required": true,
+                "titleText": "Pause the game for <value> milliseconds"
+            }
+        ]
+    },
+    {
+        "id": 76,
+        "type": "event",
+        "title": "playMusic <track>",
+        "description": "Play the specified music track ID. If the track is 'samBand', the track played will change depend on certain dialogue answers (76-79).",
+        "command": "playMusic",
+        "argNames": [
+            {
+                "argName": "track",
+                "required": true,
+                "titleText": "Play the <value> music track"
+            }
+        ]
+    },
+    {
+        "id": 77,
+        "type": "event",
+        "title": "playSound <sound>",
+        "description": "Play a given sound ID from the game's sound bank.",
+        "command": "playSound",
+        "argNames": [
+            {
+                "argName": "sound",
+                "required": true,
+                "titleText": "Play the <value> sound"
+            }
+        ]
+    },
+    {
+        "id": 78,
+        "type": "event",
+        "title": "Give the player control back",
+        "description": "Give the player control back.",
+        "command": "playerControl",
+        "argNames": []
+    },
+    {
+        "id": 79,
+        "type": "event",
+        "title": "positionOffset <actor> <x> <y>",
+        "description": "Offset the position of the named NPC by the given number of pixels. This happens instantly, with no walking animation.",
+        "command": "positionOffset",
+        "argNames": [
+            {
+                "argName": "actor",
+                "required": true,
+                "titleText": "Instantly offset <value>'s position by"
+            },
+            {
+                "argName": "x",
+                "required": true,
+                "titleText": "(<value>,"
+            },
+            {
+                "argName": "y",
+                "required": true,
+                "titleText": "<value>)"
+            }
+        ]
+    },
+    {
+        "id": 80,
+        "type": "event",
+        "title": "proceedPosition <actor>",
+        "description": "TODO: Explain",
+        "command": "proceedPosition",
+        "argNames": [
+            {
+                "argName": "actor",
+                "required": true
+            }
+        ]
+    },
+    {
+        "id": 82,
+        "type": "event",
+        "title": "question fork<answer index> \"<question>#<answer 0>#<answer 1>#...\"",
+        "description": "Show a dialogue with some answers and an optional question. When the player chooses the answer matching the fork<answer index> (like fork0 for the first answer), the specialEventVariable1 variable is set. Usually followed by a fork command. If fork<answer> is null, the event script continues with no other effect",
+        "command": "question",
+        "argNames": [
+            {
+                "argName": "fork<answer index>",
+                "required": true
+            },
+            {
+                "argName": "Q#A",
+                "required": true
+            }
+        ]
+    },
+    {
+        "id": 83,
+        "type": "event",
+        "title": "quickquestion \"#<question1>#<question2>#<question3>(break)<command>#<answer1 script>(break)<answer2 script>(break)<answer3 script>\\\\\"",
+        "description": "Show a dialogue box with some answers and an optional question. When the player chooses an answer, the event script continues with no other effect.",
+        "command": "quickquestion \"#<question1>#<question2>#<question3>(break)<command>#<answer1 script>(break)<answer2 script>(break)<answer3 script>\\\\\"",
+        "argNames": []
+    },
+    {
+        "id": 84,
+        "type": "event",
+        "title": "removeItem <object ID>",
+        "description": "Remove the first of an object from a player's inventory.",
+        "command": "removeItem",
+        "argNames": [
+            {
+                "argName": "object ID",
+                "required": true,
+                "titleText": "Remove the first object of ID `<value>` from the player's inventory"
+            }
+        ]
+    },
+    {
+        "id": 85,
+        "type": "event",
+        "title": "removeObject <x> <y>",
+        "description": "Remove the prop at a position.",
+        "command": "removeObject",
+        "argNames": [
+            {
+                "argName": "x",
+                "required": true,
+                "titleText": "Remove the prop object at tile (<value>,"
+            },
+            {
+                "argName": "y",
+                "required": true,
+                "titleText": "<value>)"
+            }
+        ]
+    },
+    {
+        "id": 86,
+        "type": "event",
+        "title": "removeQuest <quest ID>",
+        "description": "Remove the specified quest from the quest log.",
+        "command": "removeQuest",
+        "argNames": [
+            {
+                "argName": "quest ID",
+                "required": true,
+                "titleText": "Remove the quest with ID `<value>` from the quest log"
+            }
+        ]
+    },
+    {
+        "id": 87,
+        "type": "event",
+        "title": "removeSprite <x> <y>",
+        "description": "Remove the temporary sprite at a position.",
+        "command": "removeSprite",
+        "argNames": [
+            {
+                "argName": "x",
+                "required": true,
+                "titleText": "Remove the temporary sprite at tile (<value>,"
+            },
+            {
+                "argName": "y",
+                "required": true,
+                "titleText": "<value>)"
+            }
+        ]
+    },
+    {
+        "id": 88,
+        "type": "event",
+        "title": "removeTemporarySprites",
+        "description": "Remove all temporary sprites.",
+        "command": "removeTemporarySprites",
+        "argNames": []
+    },
+    {
+        "id": 89,
+        "type": "event",
+        "title": "removeTile <x> <y> <layer>",
+        "description": "Remove a tile from the specified layer.",
+        "command": "removeTile",
+        "argNames": [
+            {
+                "argName": "x",
+                "required": true,
+                "titleText": "Remove a tile at positione (<value>,"
+            },
+            {
+                "argName": "y",
+                "required": true,
+                "titleText": "<value>)"
+            },
+            {
+                "argName": "layer",
+                "required": true,
+                "titleText": " from the <value> layer"
+            }
+        ]
+    },
+    {
+        "id": 90,
+        "type": "event",
+        "title": "Reset the first event variable to false",
+        "description": "Set the first event variable to false.",
+        "command": "resetVariable",
+        "argNames": []
+    },
+    {
+        "id": 91,
+        "type": "event",
+        "title": "rustyKey",
+        "description": "Gives the player the rusty key. (Sewer key)",
+        "command": "rustyKey",
+        "argNames": []
+    },
+    {
+        "id": 92,
+        "type": "event",
+        "title": "screenFlash <alpha>",
+        "description": "Flashes the screen white for an instant. An alpha value from 0 to 1 adjusts the brightness, and values from 1 and out flashes pure white for x seconds.",
+        "command": "screenFlash",
+        "argNames": [
+            {
+                "argName": "alpha",
+                "required": true,
+                "titleText": "Flash the screen white with <value> as the alpha or seconds"
+            }
+        ]
+    },
+    {
+        "id": 93,
+        "type": "event",
+        "title": "setRunning",
+        "description": "Set the player as running.",
+        "command": "setRunning",
+        "argNames": []
+    },
+    {
+        "id": 94,
+        "type": "event",
+        "title": "shake <actor> <duration>",
+        "description": "Shake the named NPC for the given number of milliseconds.",
+        "command": "shake",
+        "argNames": [
+            {
+                "argName": "actor",
+                "required": true,
+                "titleText": "Shake <value>"
+            },
+            {
+                "argName": "duration",
+                "required": true,
+                "titleText": " for <value> milliseconds"
+            }
+        ]
+    },
+    {
+        "id": 95,
+        "type": "event",
+        "title": "showFrame farmer flip",
+        "description": "Flip the farmer's current sprite along the Y axis. TODO: Behavior with farmer looks strange?",
+        "command": "showFrame farmer flip",
+        "argNames": []
+    },
+    {
+        "id": 96,
+        "type": "event",
+        "title": "showFrame <actor> <frame ID>",
+        "description": "Set the named NPC's current frame in their Content\\Characters\\*.xnb spritesheet. Note that setting the farmer's sprite only changes parts of the sprite (some times arms, some times arms and legs and torso but not the head, etc). To rotate the whole sprite, use faceDirection farmer <0/1/2/3> first before modifying the sprite with showFrame. Frame ID starts from 0. If farmer is the one whose frame is being set, \"farmer\" can be eliminated, i.e. both showFrame farmer <frame ID> and showFrame <frame ID> would work.",
+        "command": "showFrame",
+        "argNames": [
+            {
+                "argName": "actor",
+                "required": true,
+                "titleText": "Show <value>'s"
+            },
+            {
+                "argName": "frame ID",
+                "required": true,
+                "titleText": "frame <value>"
+            }
+        ]
+    },
+    {
+        "id": 97,
+        "type": "event",
+        "title": "showRivalFrame <frame>",
+        "description": "Set the 'rival' actor's sprite to a specific frame.",
+        "command": "showRivalFrame",
+        "argNames": [
+            {
+                "argName": "frame",
+                "required": true,
+                "titleText": "Show the rival actor's frame <value>"
+            }
+        ]
+    },
+    {
+        "id": 98,
+        "type": "event",
+        "title": "skippable",
+        "description": "Allow skipping this event.",
+        "command": "skippable",
+        "argNames": []
+    },
+    {
+        "id": 99,
+        "type": "event",
+        "title": "speak <character> <\"text\">",
+        "description": "Show dialogue text from a named NPC; see dialogue format.",
+        "command": "speak",
+        "argNames": [
+            {
+                "argName": "character",
+                "required": true,
+                "titleText": "<value> says"
+            },
+            {
+                "argName": "\"text\"",
+                "required": true,
+                "titleText": " <value>"
+            }
+        ]
+    },
+    {
+        "id": 100,
+        "type": "event",
+        "title": "specificTemporarySprite <sprite> [other params]",
+        "description": "Shows the given temporary sprite. Parameters change depending on the sprite.",
+        "command": "specificTemporarySprite",
+        "argNames": [
+            {
+                "argName": "sprite",
+                "required": true,
+                "titleText": "Show the temporary sprite <value>"
+            },
+            {
+                "argName": "other params",
+                "required": false,
+                "titleText": " with parameters <value>"
+            }
+        ]
+    },
+    {
+        "id": 101,
+        "type": "event",
+        "title": "speed farmer <modifier>",
+        "description": "Add a speed modifier to the farmer. Is persistent and you will have to use the command again to return to normal speed.",
+        "command": "speed farmer",
+        "argNames": [
+            {
+                "argName": "modifier",
+                "required": true,
+                "titleText": "Change the player's speed by <value>"
+            }
+        ]
+    },
+    {
+        "id": 102,
+        "type": "event",
+        "title": "speed <actor> <speed>",
+        "description": "Sets the named NPC's speed (default speed is 3). Not applicable to the farmer. Applies only through the end of the next movement or animation on that NPC.",
+        "command": "speed",
+        "argNames": [
+            {
+                "argName": "actor",
+                "required": true,
+                "titleText": "Set <value>'s speed to"
+            },
+            {
+                "argName": "speed",
+                "required": true,
+                "titleText": " <value>"
+            }
+        ]
+    },
+    {
+        "id": 103,
+        "type": "event",
+        "title": "splitSpeak <actor> <\"text\">",
+        "description": "Dialogue, but chosen based on previous answer. ('~' is the separator used.)",
+        "command": "splitSpeak",
+        "argNames": [
+            {
+                "argName": "actor",
+                "required": true
+            },
+            {
+                "argName": "\"text\"",
+                "required": true
+            }
+        ]
+    },
+    {
+        "id": 104,
+        "type": "event",
+        "title": "startJittering",
+        "description": "Make the player start jittering.",
+        "command": "startJittering",
+        "argNames": []
+    },
+    {
+        "id": 105,
+        "type": "event",
+        "title": "stopAdvancedMoves",
+        "description": "Stop movement from advancedMove.",
+        "command": "stopAdvancedMoves",
+        "argNames": []
+    },
+    {
+        "id": 106,
+        "type": "event",
+        "title": "stopAnimation farmer",
+        "description": "Stop the farmer's current animation.",
+        "command": "stopAnimation farmer",
+        "argNames": []
+    },
+    {
+        "id": 107,
+        "type": "event",
+        "title": "stopAnimation <actor> <end frame>",
+        "description": "Stop the named NPC's current animation. Not applicable to the farmer.",
+        "command": "stopAnimation",
+        "argNames": [
+            {
+                "argName": "actor",
+                "required": true,
+                "titleText": "Stop <value>'s animation"
+            },
+            {
+                "argName": "end frame",
+                "required": true,
+                "titleText": " and set frame <value> as the last frame"
+            }
+        ]
+    },
+    {
+        "id": 108,
+        "type": "event",
+        "title": "stopGlowing",
+        "description": "Make the screen stop glowing.",
+        "command": "stopGlowing",
+        "argNames": []
+    },
+    {
+        "id": 109,
+        "type": "event",
+        "title": "stopJittering",
+        "description": "Make the player stop jittering.",
+        "command": "stopJittering",
+        "argNames": []
+    },
+    {
+        "id": 110,
+        "type": "event",
+        "title": "stopMusic",
+        "description": "Stop any currently playing music.",
+        "command": "stopMusic",
+        "argNames": []
+    },
+    {
+        "id": 111,
+        "type": "event",
+        "title": "stopRunning",
+        "description": "Make the farmer stop running.",
+        "command": "stopRunning",
+        "argNames": []
+    },
+    {
+        "id": 112,
+        "type": "event",
+        "title": "stopSwimming <actor>",
+        "description": "Make an actor stop swimming.",
+        "command": "stopSwimming",
+        "argNames": [
+            {
+                "argName": "actor",
+                "required": true,
+                "titleText": "<value> stops swimming"
+            }
+        ]
+    },
+    {
+        "id": 113,
+        "type": "event",
+        "title": "swimming <actor>",
+        "description": "Make an actor start swimming.",
+        "command": "swimming",
+        "argNames": [
+            {
+                "argName": "actor",
+                "required": true,
+                "titleText": "<value> starts swimming"
+            }
+        ]
+    },
+    {
+        "id": 114,
+        "type": "event",
+        "title": "switchEvent <event ID>",
+        "description": "Changes the current event (ie. event commands) to another event in the same location.",
+        "command": "switchEvent",
+        "argNames": [
+            {
+                "argName": "event ID",
+                "required": true,
+                "titleText": "Change the current event to another event with ID `<value>`"
+            }
+        ]
+    },
+    {
+        "id": 115,
+        "type": "event",
+        "title": "taxvote",
+        "description": "Trigger voting for or against a 3% shipping tax. (No effect on game?)",
+        "command": "taxvote",
+        "argNames": []
+    },
+    {
+        "id": 116,
+        "type": "event",
+        "title": "temporarySprite <x> <y> <row in texture> <animation length> <animation interval> <flipped> <layer depth>",
+        "description": "Create a temporary sprite with the given parameters.",
+        "command": "temporarySprite",
+        "argNames": [
+            {
+                "argName": "x",
+                "required": true
+            },
+            {
+                "argName": "y",
+                "required": true
+            },
+            {
+                "argName": "row in texture",
+                "required": true
+            },
+            {
+                "argName": "animation length",
+                "required": true
+            },
+            {
+                "argName": "animation interval",
+                "required": true
+            },
+            {
+                "argName": "flipped",
+                "required": true
+            },
+            {
+                "argName": "layer depth",
+                "required": true
+            }
+        ]
+    },
+    {
+        "id": 117,
+        "type": "event",
+        "title": "textAboveHead <actor> \"<text>\"",
+        "description": "Show a small text bubble over the named NPC's head with the given text; see dialogue format.",
+        "command": "textAboveHead",
+        "argNames": [
+            {
+                "argName": "actor",
+                "required": true,
+                "titleText": "<value> says"
+            },
+            {
+                "argName": "\"text\"",
+                "required": true,
+                "titleText": " <value> as a text bubble"
+            }
+        ]
+    },
+    {
+        "id": 118,
+        "type": "event",
+        "title": "tutorialMenu",
+        "description": "Show the tutorial menu if no other menu is open.",
+        "command": "tutorialMenu",
+        "argNames": []
+    },
+    {
+        "id": 119,
+        "type": "event",
+        "title": "updateMinigame <event data>",
+        "description": "Send an event to the current minigame.",
+        "command": "updateMinigame",
+        "argNames": [
+            {
+                "argName": "event data",
+                "required": true
+            }
+        ]
+    },
+    {
+        "id": 120,
+        "type": "event",
+        "title": "viewport move <x> <y> <duration>",
+        "description": "Pan the the camera in the direction (and with the velocity) defined by x/y for the given duration in milliseconds. Example: \"viewport move 2 -1 5000\" moves the camera 2 pixels right and 1 pixel up for 5 seconds.",
+        "command": "viewport move",
+        "argNames": [
+            {
+                "argName": "x",
+                "required": true,
+                "titleText": "Move the viewport <value> in the x-axis"
+            },
+            {
+                "argName": "y",
+                "required": true,
+                "titleText": " and <value> in the y-axis"
+            },
+            {
+                "argName": "duration",
+                "required": true,
+                "titleText": " in <value> milliseconds"
+            }
+        ]
+    },
+    {
+        "id": 121,
+        "type": "event",
+        "title": "viewport <x> <y> [true [unfreeze]|clamp [true|unfreeze]]",
+        "description": "Instantly reposition the camera to center on the given X, Y tile position. TODO: explain other parameters.",
+        "command": "viewport",
+        "argNames": [
+            {
+                "argName": "x",
+                "required": true
+            },
+            {
+                "argName": "y",
+                "required": true
+            },
+            {
+                "argName": "true [unfreeze",
+                "required": false
+            },
+            {
+                "argName": "|clamp ",
+                "required": false
+            },
+            {
+                "argName": "true|unfreeze",
+                "required": false
+            },
+            {
+                "argName": "]",
+                "required": false
+            }
+        ]
+    },
+    {
+        "id": 122,
+        "type": "event",
+        "title": "waitForKey <key> <message on finish>",
+        "description": "TODO: Explain",
+        "command": "waitForKey",
+        "argNames": [
+            {
+                "argName": "key",
+                "required": true
+            },
+            {
+                "argName": "message on finish",
+                "required": true
+            }
+        ]
+    },
+    {
+        "id": 123,
+        "type": "event",
+        "title": "waitForOtherPlayers",
+        "description": "Wait for other players (vanilla MP).",
+        "command": "waitForOtherPlayers",
+        "argNames": []
+    },
+    {
+        "id": 124,
+        "type": "event",
+        "title": "warp <actor> <x> <y>",
+        "description": "Warp the named NPC to a position to the given X, Y tile coordinate. This can be used to warp characters off-screen.",
+        "command": "warp",
+        "argNames": [
+            {
+                "argName": "actor",
+                "required": true
+            },
+            {
+                "argName": "x",
+                "required": true
+            },
+            {
+                "argName": "y",
+                "required": true
+            }
+        ]
+    },
+    {
+        "id": 125,
+        "type": "event",
+        "title": "weddingSprite <frame>",
+        "description": "Sets the actor known as 'WeddingOutfits' to a particular frame.",
+        "command": "weddingSprite",
+        "argNames": [
+            {
+                "argName": "frame",
+                "required": true
+            }
+        ]
+    }
+]

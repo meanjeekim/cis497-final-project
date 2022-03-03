@@ -1,0 +1,64 @@
+[
+    {
+        "id": 0,
+        "type": "starter",
+        "title": "<music ID>",
+        "description": "The background music or ambient background track to play. Can be changed later using playMusic <newmusic>, or stopped entirely using stopMusic. This can also be none (which stops any existing music and uses the default ambient background noise for the location), or continue (which keeps playing the current background song).",
+        "command": "",
+        "argNames": [
+            {
+                "argName": "music ID",
+                "required": true,
+                "titleText": "Play music with ID <value>"
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "type": "starter",
+        "title": "<x> <y>",
+        "description": "The tile coordinates the camera should center on at the start of the event.",
+        "command": "",
+        "argNames": [
+            {
+                "argName": "x",
+                "required": true,
+                "titleText": "Camera centers on tile (<value>,"
+            },
+            {
+                "argName": "y",
+                "required": true,
+                "titleText": "<value>)"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "type": "starter",
+        "title": "[<character ID> <x> <y> <direction>]+",
+        "description": "Initialises one or more characters' starting tile positions and directions. The character ID can be farmer or an NPC name like Abigail.",
+        "command": "",
+        "argNames": [
+            {
+                "argName": "character ID",
+                "required": true,
+                "titleText": "<value> starts at tile ("
+            },
+            {
+                "argName": "x",
+                "required": true,
+                "titleText": "<value>,"
+            },
+            {
+                "argName": "y",
+                "required": true,
+                "titleText": "<value>)"
+            },
+            {
+                "argName": "direction",
+                "required": true,
+                "titleText": " facing <value>"
+            }
+        ]
+    }
+]
