@@ -1,38 +1,53 @@
 import * as React from "react"
 import {
   ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
   theme,
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
 import { Logo } from "./Logo"
 
+// Libraries
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link as RouterLink
+} from "react-router-dom";
+
+// Components
+import { EventStudio } from './eventstudio/EventStudio';
+import { Home } from './Home';
+import { TileMapViewer } from "./mapviewer/MapViewer";
+
+console.dir(process.env)
+
 export const App = () => (
   <ChakraProvider theme={theme}>
-    <Box textAlign="center" fontSize="xl">
-      <Grid minH="100vh" p={3}>
-        <ColorModeSwitcher justifySelf="flex-end" />
-        <VStack spacing={8}>
-          <Logo h="40vmin" pointerEvents="none" />
-          <Text>
-            Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
-          </Text>
-          <Link
-            color="teal.500"
-            href="https://chakra-ui.com"
-            fontSize="2xl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn Chakra
-          </Link>
-        </VStack>
-      </Grid>
-    </Box>
+    <Router basename="/sdv-mod-automator">
+      <div>
+        <nav>
+          <Breadcrumb>
+            <BreadcrumbItem>
+              <BreadcrumbLink as={RouterLink} to="/">home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+              <BreadcrumbLink as={RouterLink} to="/eventstudio">event studio</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+              <BreadcrumbLink as={RouterLink} to="/mapviewer/Town">map viewer</BreadcrumbLink>
+            </BreadcrumbItem>
+          </Breadcrumb>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/eventstudio" element={<EventStudio/>} />
+          <Route path="/mapviewer/:mapname" element={<TileMapViewer/>} />
+        </Routes>
+      </div>
+    </Router>
   </ChakraProvider>
 )

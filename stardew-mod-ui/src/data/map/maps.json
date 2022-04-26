@@ -1,0 +1,20 @@
+[
+  {
+    "filename": "Town.png",
+    "name": "Town",
+    "width": 1920,
+    "height": 1760
+  },
+  {
+    "filename": "Beach.png",
+    "name": "Beach",
+    "width": 1664,
+    "height": 800
+  },
+  {
+    "filename": "Farm.png",
+    "name": "Farm",
+    "width": 1280,
+    "height": 1040
+  }
+]
