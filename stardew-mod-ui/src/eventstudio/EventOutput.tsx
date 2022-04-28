@@ -56,12 +56,15 @@ export const EventOutput = ({data}:IPropsEventOutput) => {
         const pcStringArr = arr.map((pc) => {
           const commandString = pc.command;
           const spaceString = pc.args.length > 0 && pc.command.length > 0 ? ' ': '';
-          const argsString = pc.args.map((argEntry, i) => {
-            if (pc.argNames[i].argName === "\"text\"") {
-              return `\\"${argEntry.join(' ').trim()}\\"`;
-            }
-            return argEntry.join(' ').trim();
-          }).join(' ');
+          const argsString = pc.args.map((argEntry, argEntryIdx) => (
+            argEntry.map((argValue, argIdx) => {
+              if (pc.argNames[Math.min(pc.argNames.length-1, argIdx)].argName === "\"text\"") {
+                return `\\"${argValue.trim()}\\"`;
+              } else {
+                return argValue.trim();
+              }
+            }).join(' ').trim()
+          )).join(' ');
 
           console.log(commandString, spaceString, argsString);
 

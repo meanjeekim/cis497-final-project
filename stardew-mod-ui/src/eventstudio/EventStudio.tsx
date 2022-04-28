@@ -27,7 +27,7 @@ eventJson.map((cmdType) => {
 export const EventStudio = () => {
     const [preconditions, setPreconditions] = React.useState(pcJson);
     const [addedPreconditions, setAddedPreconditions] = React.useState<ICommand []>([]);
-    const [eventId, setEventId] = React.useState("69");
+    const [eventId, setEventId] = React.useState("");
 
     const [events, setEvents] = React.useState(eventJson);
     const [addedEvents, setAddedEvents] = React.useState<ICommand []>([]);
@@ -75,8 +75,8 @@ export const EventStudio = () => {
 
             <HStack align="flex-start">
                 <Box w="70%">
-                    <CommandSection section={{title: "starting commands", commands: startEventJson, addedCommands: startEvents, setAddedCommands: setStartEvents, refs: startRefs}} />
                     <CommandSection section={{title: "preconditions", commands: preconditions, addedCommands: addedPreconditions, setAddedCommands: setAddedPreconditions, refs: pcRefs}} />
+                    <CommandSection section={{title: "starting commands", commands: startEventJson, addedCommands: startEvents, setAddedCommands: setStartEvents, refs: startRefs}} />
                     <CommandSection section={{title: "events", commands: events, addedCommands: addedEvents, setAddedCommands: setAddedEvents, refs: eventRefs}} />
                 </Box>
                 <Box w="30%">

@@ -335,13 +335,13 @@
             {
                 "argName": "loop",
                 "required": true,
-                "titleText": " (looped?: <value>)"
+                "titleText": " (looped?: <value>) with the following path: "
             },
             {
                 "argName": "x y",
                 "required": true,
                 "list": true,
-                "titleText": "with the following path: (<value>)"
+                "titleText": "move <value> tiles horizontally, <value> tiles vertically"
             }
         ]
     },

@@ -21,6 +21,7 @@ export interface IArgInfo {
     argName: string;
     required: boolean;
     titleText?: string;
+    list?: boolean;
 }
 
 export interface ICommandType {
@@ -71,29 +72,43 @@ export const Command = ({commandIndex, cmd, setAddedCommands, ref }:IPropsComman
         <Flex>
             <Wrap wordBreak="normal" direction="column">
                 <WrapItem><Tooltip label={cmd.description} placement="right">
-                    <Heading size="sm">{
+                    <Heading size="sm">
+                      {
                         cmd.args.length == 0 || cmd.argNames[0].titleText === undefined
                         ? cmd.title
                         : cmd.args.map((arg, cmdIdx) => 
-                        arg.map((argValue, idx) => {
-                            if (idx >= cmd.argNames.length) {
-                                console.log(cmd);
-                            }
+                          arg.map((argValue, idx) => {
+                              const argNameIdx = Math.min(cmd.argNames.length-1, idx);
+                              if (idx >= cmd.argNames.length) {
+                                  console.log(cmd);
+                              }
 
-                            const titleValue = argValue == "" ? cmd.argNames[idx].argName : argValue;
+                              const title = cmd.argNames[argNameIdx].titleText;
+                              const titleValue = argValue == "" ? cmd.argNames[argNameIdx].argName : argValue;
 
-                            // check if arg is optional
-                            if (cmd.argNames[idx].required) {
-                                // replace "<value>" in titleText with the value
-                                return cmd.argNames[idx].titleText ? cmd.argNames[idx].titleText?.replace("<value>", titleValue) : titleValue;
-                            } else {
-                                const split = cmd.argNames[idx].titleText?.split('~') ?? [titleValue, titleValue];
-                                return argValue.length > 0
-                                    ? split[0]
-                                    : split[1];
-                            }
-                        }).join(' ')
-                    )}</Heading>
+                              // check if arg is optional
+                              if (cmd.argNames[argNameIdx].required) {
+                                  // replace "<value>" in titleText with the value
+                                  if (title && cmd.argNames[argNameIdx].list) {
+                                      // split titleValue
+                                      let listTitle = title!;
+                                      const titleValueSplit = titleValue.split(' ');
+                                      titleValueSplit.forEach(v => {
+                                          listTitle = listTitle.replace("<value>", v)
+                                      });
+                                      return listTitle;
+                                  }
+                                  return title && argNameIdx === idx ? title?.replace("<value>", titleValue) : titleValue;
+                              } else {
+                                  const split = title?.split('~') ?? [titleValue, titleValue];
+                                  return argValue.length > 0
+                                      ? split[0]
+                                      : split[1];
+                              }
+                            }).join(' ')
+                        ).join(' AND ')
+                      }
+                    </Heading>
                 </Tooltip></WrapItem>
                 {
                     cmd.argNames.length > 0 && 
@@ -141,21 +156,59 @@ export const Command = ({commandIndex, cmd, setAddedCommands, ref }:IPropsComman
 }
 
 export const ArgInputList = ({commandIndex, cmd, setAddedCommands}:IPropsCommand ) => {
-    // console.log(cmd);
+    console.log('arginputcmd', cmd);
+    const addArgSet = () => {
+      setAddedCommands(prevCommands => {
+          const newCommands = [
+              ...prevCommands.slice(0, commandIndex),
+              {
+                  ...prevCommands[commandIndex],
+                  args: [
+                      ...prevCommands[commandIndex].args,
+                      cmd.argNames.map(() => ''),     // new array of argName size of empty strings
+                  ]
+              },
+              ...prevCommands.slice(commandIndex + 1),
+          ];
+          return newCommands;
+      })
+    }
+
+    const addArg = (argEntryIdx: number) => {
+      setAddedCommands(prevCommands => {
+          const newCommands = [
+              ...prevCommands.slice(0, commandIndex),
+              {
+                  ...prevCommands[commandIndex],
+                  args: [
+                    ...prevCommands[commandIndex].args.slice(0, argEntryIdx),
+                    [
+                        ...prevCommands[commandIndex].args[argEntryIdx],
+                        ""
+                    ],
+                    ...prevCommands[commandIndex].args.slice(argEntryIdx + 1),
+                  ]
+              },
+              ...prevCommands.slice(commandIndex + 1),
+          ];
+          return newCommands;
+      })
+    }
 
     return (
         <VStack>
             {cmd.args.map((argEntry, argEntryIdx) => 
                 <HStack key={`arginputHstack${argEntryIdx}`}>
                     <Wrap direction="row">
-                        {argEntry.map((argValue, argIdx) =>
-                            cmd.argNames[argIdx] 
+                        {argEntry.map((argValue, argIdx) => {
+                            const argNameIdx = Math.min(cmd.argNames.length-1, argIdx);
+                            return cmd.argNames[argNameIdx] 
                             ? <WrapItem key={`arginputwrap${argIdx}`}>
                             <InputGroup size="sm">
-                                <InputLeftAddon children={cmd.argNames[argIdx].argName} />
+                                <InputLeftAddon children={cmd.argNames[argNameIdx].argName} />
                                 <Input 
-                                    isInvalid={cmd.argNames[argIdx].required && argValue.trim().length == 0}
-                                    w={cmd.argNames[argIdx].argName.length <= 2 
+                                    isInvalid={cmd.argNames[argNameIdx].required && argValue.trim().length == 0}
+                                    w={cmd.argNames[argNameIdx].argName.length <= 2 
                                         ? "20"
                                         : "30"}
                                     value={argValue}
@@ -177,27 +230,18 @@ export const ArgInputList = ({commandIndex, cmd, setAddedCommands}:IPropsCommand
                                             },
                                             ...prevCommands.slice(commandIndex + 1),
                                         ];
-                                        // console.log(newCommands);
                                         return newCommands;
-                                        // const commands = [...prevCommands];
-                                        // const command = {...commands[commandIndex]};
-                                        // const commandArgEntries = [...command.args];
-                                        // const commandArg = [...commandArgEntries[argEntryIdx]];
-                                        // commandArg[argIdx] = event.target.value;
-                                        // commandArgEntries[argEntryIdx] = commandArg;
-                                        // command.args = commandArgEntries;
-                                        // commands[commandIndex] = command;
-                                        // console.log(commands);
-                                        // return commands;
                                     })
                                     }} />
                             </InputGroup>
                             </WrapItem>
                             : <Text key={`arginputText${argIdx}`}>No arg param for "{argValue}"</Text>
-                        )}
+                        })}
+                        { cmd.title.endsWith('>+') && <IconButton onClick={() => addArg(argEntryIdx)} aria-label="add another set of arguments"/>}
                     </Wrap>
                 </HStack>
             )}
+          { cmd.title.endsWith(']+') && <IconButton onClick={addArgSet} aria-label="add another set of arguments"/>}
         </VStack>
     );
 };
