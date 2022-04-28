@@ -1,0 +1,1 @@
+"69/d Mon/w raining": "50s/61 29/farmer 61 29 0 Sebastian 49 43 0/message \"This is my message\"/move Sebastian 0 -7 0/move Sebastian 7 0 1/move Sebastian 0 -7 0/move Sebastian 4 0 1/speak Sebastian \"Hello there\"/end"

@@ -65,7 +65,7 @@ export const CommandType = ({cmd}:IPropsCommandType ) => (
 
 export const Command = ({commandIndex, cmd, setAddedCommands, ref }:IPropsCommand ) => 
     {
-        console.log(ref);
+        // console.log('cmd', cmd);
     return (
     <Box p={3} wordBreak="break-all" m="2" ref={ref}>
         <Flex>
@@ -146,11 +146,11 @@ export const ArgInputList = ({commandIndex, cmd, setAddedCommands}:IPropsCommand
     return (
         <VStack>
             {cmd.args.map((argEntry, argEntryIdx) => 
-                <HStack>
+                <HStack key={`arginputHstack${argEntryIdx}`}>
                     <Wrap direction="row">
                         {argEntry.map((argValue, argIdx) =>
                             cmd.argNames[argIdx] 
-                            ? <WrapItem>
+                            ? <WrapItem key={`arginputwrap${argIdx}`}>
                             <InputGroup size="sm">
                                 <InputLeftAddon children={cmd.argNames[argIdx].argName} />
                                 <Input 
@@ -193,7 +193,7 @@ export const ArgInputList = ({commandIndex, cmd, setAddedCommands}:IPropsCommand
                                     }} />
                             </InputGroup>
                             </WrapItem>
-                            : <Text>No arg param for "{argValue}"</Text>
+                            : <Text key={`arginputText${argIdx}`}>No arg param for "{argValue}"</Text>
                         )}
                     </Wrap>
                 </HStack>

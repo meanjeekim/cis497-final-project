@@ -1,6 +1,6 @@
-import { Box, Button, Center, Heading, Text, Textarea, VStack } from "@chakra-ui/react"
+import { Box, Button, Heading, Text, Textarea, VStack } from "@chakra-ui/react"
 import * as React from "react"
-import { IArgInfo, ICommand, ICommandType } from "./Command"
+import { ICommand, ICommandType } from "./Command"
 
 const getInvalidCommand = (invalidCmd: string) => ({
     id: -1,
@@ -45,15 +45,29 @@ export const EventOutput = ({data}:IPropsEventOutput) => {
         eventRefs
     } = data;
 
-    const pcArr = preconditions.map((pc) => `${pc.command}${pc.args.length > 0 ? ' ': ''}${pc.args.map((argEntry) => argEntry.join(' ').trim()).join(' ')}`);
-    // console.log(preconditions[0]);
-    const startEventStringArr = startEvents.map((event) => `${event.args.map((argEntry) => argEntry.join(' ').trim()).join(' ')}`);
-    const eventStringArr = events.map((event) => `${event.command}${event.args.length > 0 ? ' ': ''}${event.args.map((argEntry) => argEntry.join(' ').trim()).join(' ')}`);
+    // const pcArr = preconditions.map((pc) => `${pc.command}${pc.args.length > 0 ? ' ': ''}${pc.args.map((argEntry) => argEntry.join(' ').trim()).join(' ')}`);
+    // // console.log(preconditions[0]);
+    // const startEventStringArr = startEvents.map((event) => `${event.args.map((argEntry) => argEntry.join(' ').trim()).join(' ')}`);
+    // const eventStringArr = events.map((event) => `${event.command}${event.args.length > 0 ? ' ': ''}${event.args.map((argEntry) => argEntry.join(' ').trim()).join(' ')}`);
 
     const [eventTextarea, setEventTextarea] = React.useState("");
 
     const convertCmdToElement = (arr: ICommand [], refs: React.RefObject<HTMLDivElement> []) => {
-        const pcStringArr = arr.map((pc) => `${pc.command}${pc.args.length > 0 ? ' ': ''}${pc.args.map((argEntry) => argEntry.join(' ').trim()).join(' ')}`);
+        const pcStringArr = arr.map((pc) => {
+          const commandString = pc.command;
+          const spaceString = pc.args.length > 0 && pc.command.length > 0 ? ' ': '';
+          const argsString = pc.args.map((argEntry, i) => {
+            if (pc.argNames[i].argName === "\"text\"") {
+              return `\\"${argEntry.join(' ').trim()}\\"`;
+            }
+            return argEntry.join(' ').trim();
+          }).join(' ');
+
+          console.log(commandString, spaceString, argsString);
+
+          return (commandString + spaceString + argsString).trim();
+        });
+        // const pcStringArr = arr.map((pc) => `${pc.command}${pc.args.length > 0 && pc.command.length > 0 ? ' ': ''}${pc.args.map((argEntry) => argEntry.join(' ').trim()).join(' ')}`);
         const elementArr = [];
 
         var i = 0;
@@ -61,7 +75,7 @@ export const EventOutput = ({data}:IPropsEventOutput) => {
         while (i < arr.length-1) {
             // console.log(refs[i]);
             elementArr.push(
-                <Text as="span" _hover={{background: "teal.100"}} onClick={() => {
+                <Text key={`cmd${i}`} as="span" _hover={{background: "teal.100"}} onClick={() => {
                     refs[i].current?.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start',
@@ -71,21 +85,30 @@ export const EventOutput = ({data}:IPropsEventOutput) => {
                 </Text>
             );
             elementArr.push(
-                <Text as="span">
-                    /
-                </Text>
+                <Text key={`separator${i}`} as="span">/</Text>
             );
             i += 1;
         }
 
         // add last element
         elementArr.push(
-            <Text as="span" _hover={{background: "teal.100"}}>
+            <Text key="last" as="span" _hover={{background: "teal.100"}}>
                 {pcStringArr[i]}
             </Text>
         );
 
         return elementArr;
+    }
+
+    const assembleStartingCommands = () => {
+      const startElements: JSX.Element[] = convertCmdToElement(startEvents, startRefs);
+      console.log('startElements', startElements);
+
+      for (let i = 5; i < startElements.length; i += 2) {
+        startElements.splice(i, 1, <Text as="span"> </Text>);
+      }
+
+      return startElements;
     }
 
     const populate = (eventString: String) => {
@@ -123,7 +146,7 @@ export const EventOutput = ({data}:IPropsEventOutput) => {
 
             // if args length is > argNames, just append new arg to the last arg in args
             const args: string [] = [];
-            argSplit.map((argToAdd)=> {
+            argSplit.forEach((argToAdd)=> {
                 if (args.length >= commandType.argNames.length) {
                     args[args.length-1] = args[args.length-1].concat(` ${argToAdd}`);
                 } else {
@@ -160,13 +183,14 @@ export const EventOutput = ({data}:IPropsEventOutput) => {
         newStartEvents.push(startTileCommand);
         eSplit.shift();
 
-        const startPositionCommand = JSON.parse(JSON.stringify(commandToStartEvents[2]));
+        const startPositionCommand = JSON.parse(JSON.stringify(commandToStartEvents[2]));    
         startPositionCommand.args = [];
         const positionEntrySplit = eSplit[0].split(' ');
+        console.log('posentrysplit', positionEntrySplit);
         for (var i = 0; i < positionEntrySplit.length; i += 4) {
             startPositionCommand.args.push(positionEntrySplit.slice(i, Math.min(i + 4, positionEntrySplit.length)));
         }
-        // console.log(startPositionCommand);
+        console.log(startPositionCommand);
         newStartEvents.push(startPositionCommand);
         eSplit.shift();
 
@@ -182,35 +206,34 @@ export const EventOutput = ({data}:IPropsEventOutput) => {
             var cmdString = sliceIdx > -1 ? commandString.slice(0, sliceIdx) : commandString;
 
             // check if command is end/question/fade because there are end __ commands with spaces >:(
-            if (cmdString == "end") {
+            if (cmdString === "end") {
                 const secondArgIdx = commandString.indexOf(' ', sliceIdx+1);
-                const secondArgString = commandString.slice(0, secondArgIdx);
-                if (commandToEvent[secondArgString] != null) {
+                const secondArgString = secondArgIdx > 0 ? commandString.slice(0, secondArgIdx) : commandString;
+                if (commandToEvent[secondArgString] !== null) {
                     cmdString = secondArgString;
                     sliceIdx = secondArgIdx;
                 }
-                // console.log(`secondArgString: ${secondArgString}`);
+                console.log(`secondArgString: ${secondArgString}`);
             }
 
             const commandType = commandToEvent[cmdString];
-            if (commandType == undefined) {
+            if (commandType === undefined) {
                 console.log(`${cmdString} is not a valid command`);
                 return getInvalidCommand(`invalid command: ${cmdString}`);
             }
-            // console.log(`cmdString: ${cmdString}`);
-            // console.log(commandType);
-            
-            // console.log(`commandString: ${commandString}`);
+
+            commandString = commandString.replaceAll('\\"', '');
             var argString = sliceIdx > -1 ? commandString.slice(sliceIdx + 1) : "";
             // console.log(`argString: ${argString}`);
             
             var args: string [] = [];
             while (argString.length > 0) {
                 var separator = ' ';
-                if (argString.startsWith("\\\"")) {
-                    // handle dialogue arg
-                    separator = "\\\"";
-                }
+                // if (argString.startsWith("\\\"")) {
+                //     // handle dialogue arg
+                //     separator = "\\\"";
+                //     console.log('argString', argString);
+                // }
                 
                 var newArgString = "";
                 var argToAdd = "";
@@ -244,12 +267,14 @@ export const EventOutput = ({data}:IPropsEventOutput) => {
                 args.push("");
             }
 
+            console.log('args', args);
+
             const newCommand = JSON.parse(JSON.stringify(commandType));
             newCommand.args = args.length > 0 ? [[...args]] : [];
             return newCommand;
         })
 
-        setAddedEvents(newEvents.filter(event => event != undefined));
+        setAddedEvents(newEvents.filter(event => event !== undefined));
     }
 
     return (
@@ -265,7 +290,7 @@ export const EventOutput = ({data}:IPropsEventOutput) => {
                 </Text>
                 {convertCmdToElement(preconditions, pcRefs)}
                 <Text as="span">": "</Text>
-                {convertCmdToElement(startEvents, startRefs)}/{convertCmdToElement(events, eventRefs)}
+                {assembleStartingCommands()}/{convertCmdToElement(events, eventRefs)}
                 "
             </Box>
 

@@ -1,10 +1,10 @@
 import * as React from "react"
 
-import { Box, VStack, HStack } from "@chakra-ui/layout";
+import { Box, VStack } from "@chakra-ui/layout";
 
 import { Command, CommandType, ICommand, ICommandType } from "./Command";
-import { Text, StackDivider, Center, Flex, IconButton, Divider, Spacer, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
-import { AddIcon, SearchIcon } from "@chakra-ui/icons";
+import { Text, StackDivider, Center, Flex, IconButton, Divider } from "@chakra-ui/react";
+import { AddIcon } from "@chakra-ui/icons";
 
 interface PropsCommandList {
     commandList: {
