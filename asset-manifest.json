@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/stardew-mod-ui/static/js/main.e047f126.js",
+    "main.js": "/stardew-mod-ui/static/js/main.a7a8064f.js",
     "static/js/377.60fd0b32.chunk.js": "/stardew-mod-ui/static/js/377.60fd0b32.chunk.js",
     "index.html": "/stardew-mod-ui/index.html",
-    "main.e047f126.js.map": "/stardew-mod-ui/static/js/main.e047f126.js.map",
+    "main.a7a8064f.js.map": "/stardew-mod-ui/static/js/main.a7a8064f.js.map",
     "377.60fd0b32.chunk.js.map": "/stardew-mod-ui/static/js/377.60fd0b32.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.e047f126.js"
+    "static/js/main.a7a8064f.js"
   ]
 }
