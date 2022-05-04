@@ -1,0 +1,167 @@
+[
+ {
+   "syntax": "A <dialogue ID>",
+   "precondition": "The special dialogue event with the given ID is not in progress. This can be a custom event ID, but these are the in-game IDs: cc_Begin, cc_Boulder, cc_Bridge, cc_Bus, cc_Complete, cc_Greenhouse, cc_Minecart, dumped_Girls, dumped_Guys, Introduction, joja_Begin, pamHouseUpgrade, pamHouseUpgradeAnonymous, secondChance_Girls, secondChance_Guys, shaneSaloon1, shaneSaloon2, willyCrabs."
+ },
+ {
+   "syntax": "F",
+   "precondition": "Today is not a festival day."
+ },
+ {
+   "syntax": "U <day count>",
+   "precondition": "There are no festivals within the specified number of days from today."
+ },
+ {
+   "syntax": "d <day of week>",
+   "precondition": "Today is not one of the specified days (may specify multiple days). Valid values: Mon, Tue, Wed, Thu, Fri, Sat, Sun."
+ },
+ {
+   "syntax": "r <number>",
+   "precondition": "A random probability check, where <number> is the probability between 0 and 1 (e.g. 0.2 for 20% chance)."
+ },
+ {
+   "syntax": "v <name>",
+   "precondition": "The specified NPC is not invisible (regardless of whether they're on-screen)."
+ },
+ {
+   "syntax": "w <weather>",
+   "precondition": "Current weather matches <weather>. Valid values: rainy, sunny."
+ },
+ {
+   "syntax": "y <year>",
+   "precondition": "If <year> is 1, must be in the first year. Otherwise, year must be at least this value."
+ },
+ {
+   "syntax": "z <season>",
+   "precondition": "Current season is not <season>."
+ },
+
+ {
+    "syntax": "D <name>",
+    "precondition": "Current player is dating the given NPC name."
+  },
+  {
+    "syntax": "J",
+    "precondition": "Current player has finished the Joja Warehouse."
+  },
+  {
+    "syntax": "L",
+    "precondition": "Event is in the FarmHouse and the FarmHouse has been upgraded at least twice (has nursery but not necessarily cellar)."
+  },
+  {
+    "syntax": "M <number>",
+    "precondition": "Current player has at least this much money."
+  },
+  {
+    "syntax": "O <name>",
+    "precondition": "Current player is married to that NPC."
+  },
+  {
+    "syntax": "S <secret note ID>",
+    "precondition": "Current player has seen the Secret Note with the given ID."
+  },
+  {
+    "syntax": "a <x> <y>",
+    "precondition": "Current player is on that tile position."
+  },
+  {
+    "syntax": "b <number>",
+    "precondition": "Current player has reached the bottom floor of the Mines at least that many times."
+  },
+  {
+    "syntax": "c <number>",
+    "precondition": "Current player has at least that many free inventory slots."
+  },
+  {
+    "syntax": "e <event ID>",
+    "precondition": "Current player has seen the specified event (may contain multiple event IDs)."
+  },
+  {
+    "syntax": "f <name> <number>",
+    "precondition": "Current player has at least <number> friendship points with the <name> NPC. Can specify multiple name and number pairs, in which case the player must meet all of them."
+  },
+  {
+    "syntax": "g <gender>",
+    "precondition": "Current player is the specified gender (male or female)."
+  },
+  {
+    "syntax": "h <pet>",
+    "precondition": "Current player does not already have a pet, and their preference matches <pet> (\"cat\" or \"dog\")."
+  },
+  {
+    "syntax": "i <item ID>",
+    "precondition": "Current player has specified item in their inventory."
+  },
+  {
+    "syntax": "j <number>",
+    "precondition": "Current player has played more than <number> days."
+  },
+  {
+    "syntax": "k <event ID>",
+    "precondition": "Current player has not seen that event (may contain multiple event IDs)."
+  },
+  {
+    "syntax": "l <letter ID>",
+    "precondition": "Current player has not received that mail letter or non-mail flag."
+  },
+  {
+    "syntax": "m <number>",
+    "precondition": "Current player has earned at least this much money (regardless of how much they currently have)."
+  },
+  {
+    "syntax": "n <letter ID>",
+    "precondition": "Current player has received that mail letter or non-mail flag."
+  },
+  {
+    "syntax": "o <name>",
+    "precondition": "Current player is not married to that NPC."
+  },
+  {
+    "syntax": "p <name>",
+    "precondition": "Specified NPC is in the current player's location."
+  },
+  {
+    "syntax": "q <dialogue ID>",
+    "precondition": "Current player has chosen the given answer in a dialogue. May contain multiple dialogue IDs, in which case they must all have been selected."
+  },
+  {
+    "syntax": "s <item ID> <number>",
+    "precondition": "Current player has shipped at least <number> of the specified item. Can specify multiple item and number pairs, in which case all of them must be met."
+  },
+  {
+    "syntax": "t <min time> <max time>",
+    "precondition": "Current time is between between the specified times. Can range from 600 to 2600."
+  },
+  {
+    "syntax": "u <day of month>",
+    "precondition": "Current day of month is one of the specified values (may contain multiple days)."
+  },
+  {
+    "syntax": "x <letter ID>",
+    "precondition": "For the current player: mark this event as seen, add the specified letter to tomorrow's mail, then return false (so that nothing further happens). Use the format \"x letterid true\" to send the letter immediately."
+  },
+  {
+    "syntax": "C",
+    "precondition": "Host player has not finished the community center, or has not seen the grand reopening yet."
+  },
+  {
+    "syntax": "H",
+    "precondition": "Current player is the host player."
+  },
+  {
+    "syntax": "Hl <letter ID>",
+    "precondition": "Host player has not received that mail letter or non-mail flag."
+  },
+  {
+    "syntax": "Hn <letter ID>",
+    "precondition": "Host player has received that mail letter or non-mail flag."
+  },
+  {
+    "syntax": "*l <letter ID>",
+    "precondition": "Host player and current player have not received that mail letter or non-mail flag."
+  },
+  {
+    "syntax": "*n <letter ID>",
+    "precondition": "Host player and current player have received that mail letter or non-mail flag."
+  }
+]

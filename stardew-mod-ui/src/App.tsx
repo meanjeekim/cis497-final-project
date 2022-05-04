@@ -26,7 +26,7 @@ console.dir(process.env)
 
 export const App = () => (
   <ChakraProvider theme={theme}>
-    <Router basename="/sdv-mod-automator">
+    <Router basename="/stardew-mod-ui">
       <div>
         <nav>
           <Breadcrumb>

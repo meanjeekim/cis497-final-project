@@ -1,0 +1,506 @@
+[
+ {
+   "command": "addBigProp <x> <y> <object ID>",
+   "description": "Adds an object at the specified tile from the TileSheets\\Craftables.png sprite sheet."
+ },
+ {
+   "command": "addConversationTopic <ID> [length]",
+   "description": "Starts a conversation topic with the given ID and day length (or 4 days if no length given)."
+ },
+ {
+   "command": "addCookingRecipe <recipe>",
+   "description": "Adds the specified cooking recipe to the player."
+ },
+ {
+   "command": "addCraftingRecipe <recipe>",
+   "description": "Adds the specified crafting recipe to the player."
+ },
+ {
+   "command": "addFloorProp <prop index> <x> <y> [solid width] [solid height] [display height]",
+   "description": "Add a non-solid prop from the current festival texture. Default solid width/height is 1. Default display height is solid height."
+ },
+ {
+   "command": "addLantern <row in texture> <x> <y> <light radius>",
+   "description": "Adds a glowing temporary sprite at the specified tile from the Maps\\springobjects.png sprite sheet. A light radius of 0 just places the sprite."
+ },
+ {
+   "command": "addMailReceived <letter ID>",
+   "description": "Set a letter as received."
+ },
+ {
+   "command": "addObject <x> <y> <sprite index> [layer]",
+   "description": "Adds a temporary sprite at the specified tile from the Maps\\springobjects.png sprite sheet."
+ },
+ {
+   "command": "addProp <prop index> <x> <y> [solid width] [solid height] [display height]",
+   "description": "Add a solid prop from the current festival texture. Default solid width/height is 1. Default display height is solid height."
+ },
+ {
+   "command": "addQuest <quest ID>",
+   "description": "Add the specified quest to the quest log."
+ },
+ {
+   "command": "addTemporaryActor <character> <sprite width> <sprite height> <tile x> <tile y> <facing> [breather] [Character|Animal|Monster] [animal name]",
+   "description": "Add a temporary actor. 'breather' is boolean. The category determines where the texture will be loaded from, default is Character. Animal name only applies to animal."
+ },
+ {
+   "command": "addToTable <x> <y> <object ID>",
+   "description": "Places on object on the furniture at a position. If the location is FarmHouse, then it will always be placed on the initial table."
+ },
+ {
+   "command": "addTool <Sword|Wand>",
+   "description": "Adds either a Battered Sword or Return Scepter to the player's inventory. The Battered Sword is unobtainable in vanilla and is incomplete and not implemented."
+ },
+ {
+   "command": "advancedMove <npc> <loop> <x y>...",
+   "description": "Set multiple movements for an NPC.  You can set True to have NPC walk the path continuously. Example: /advancedMove Robin false 0 3 2 0 0 2 -2 0 0 -2 2 0/"
+ },
+ {
+   "command": "ambientLight <r> <g> <b>",
+   "description": "Modifies the ambient light level, with RGB values from 0 to 255. Note that it works by removing colors from the existing light ambience, so ambientLight 1 80 80 would reduce green and blue and leave the light with a reddish hue."
+ },
+ {
+   "command": "animalNaming",
+   "description": "Show the animal naming menu if no other menu is open. Uses the current location as Coop. Appears to only work for 'hatched' animals."
+ },
+ {
+   "command": "animate <actor> <flip> <loop> <frame duration> <frames...>",
+   "description": "Animate a named actor, using one or more <frames> from their sprite sheet, for <frame duration> milliseconds per frame. <frames> are indexed numerically, based on 16x32 peices of the image. This index increases as you go from left to right, starting from 0. <flip> indicates whether to flip the sprites along the Y axis; <loop> indicates whether to repeat the animation until stopAnimation is used."
+ },
+ {
+   "command": "attachCharacterToTempSprite <actor>",
+   "description": "Attach an actor to the most recent temporary sprite."
+ },
+ {
+   "command": "awardFestivalPrize",
+   "description": "Awards the festival prize to the winner for the easter egg hunt and ice fishing contest."
+ },
+ {
+   "command": "awardFestivalPrize <item type>",
+   "description": "Awards the specified item to the player. Possible item types are \"pan\", \"sculpture\", \"rod\", \"sword\", \"hero\", \"joja\", \"slimeegg\", \"emilyClothes\", and \"jukebox\"."
+ },
+ {
+   "command": "beginSimultaneousCommand",
+   "description": "This command states that the next event commands will all be done at the same time.  Must also have endSimultaneousCommand after the commands needed to execute at the same time."
+ },
+ {
+   "command": "broadcastEvent",
+   "description": "TODO: Explain broadcastEvent."
+ },
+ {
+   "command": "catQuestion",
+   "description": "Trigger question about adopting your pet."
+ },
+ {
+   "command": "cave",
+   "description": "Trigger the question for the farm cave type. This will work again later, however changing from bats to mushrooms will not remove the mushroom spawning objects."
+ },
+ {
+   "command": "changeLocation <location>",
+   "description": "Change to another location and run the remaining event script there."
+ },
+ {
+   "command": "changeMapTile <layer> <x> <y> <tile index>",
+   "description": "Change the specified tile to a particular value."
+ },
+ {
+   "command": "changePortrait <npc> <portrait>",
+   "description": "Change the NPC's portrait to be from \"Portraits/<actor>_<portrait>\"."
+ },
+ {
+   "command": "changeSprite <actor> <sprite>",
+   "description": "Change the actor's sprite to be from \"Characters/<actor>_<sprite>\"."
+ },
+ {
+   "command": "changeToTemporaryMap <map> [pan]",
+   "description": "Change the location to a temporary one loaded from the map file specified by <map>. If the [pan] argument is omitted, also pan to tile coordinates 0, 0 on the new map. If any value is given for [pan], no panning occurs."
+ },
+ {
+   "command": "changeYSourceRectOffset <npc> <offset>",
+   "description": "Changes the NPC's vertical texture offset. Example: changeYSourceRectOffset Abigail 96 will offset her sprite sheet, showing her looking left instead of down. This persists for the rest of the event. This is only used in Emily's Clothing Therapy event to display the various outfits properly."
+ },
+ {
+   "command": "characterSelect",
+   "description": "Seemingly unused. Sets Game1.gameMode to 5 and Game1.menuChoice = 0."
+ },
+ {
+   "command": "cutscene <cutscene>",
+   "description": "Activate a cutscene. See cutscene list."
+ },
+ {
+   "command": "doAction <x> <y>",
+   "description": "Acts as if the player had clicked the specified x/y coordinate and triggers any relevant action. It is commonly used to open doors from inside events, but it can be used for other purposes. If you use it on an NPC you will talk to them, and if the player is holding an item they will give that item as a gift. doAction activates objects in the main game world (their actual location outside of the event), so activating NPCs like this is very tricky, and their reaction varies depending on what the player is holding."
+ },
+ {
+   "command": "dump <group>",
+   "description": "Starts the special \"cold shoulder\" and \"second chance\" dialogue events for the given group (women if group is girls and men if it is anything else.) The cold shoulder event has an id of dumped_Girls or dumped_Guys and lasts 7 days; the second chance event has an id of secondChance_Girls or secondChance_Guys and lasts 14 days. During open beta testing of version 1.3 there was a second parameter which determined the amount of hearts lost, but support for that parameter was removed before release."
+ },
+ {
+   "command": "endSimultaneousCommand",
+   "description": "Sets the end of all commands that are to be done simultaneously.  Format: beginSimultaneousCommand/<Event Commands>.../endSimultaneousCommand"
+ },
+ {
+   "command": "elliotbooktalk",
+   "description": "Elliot book talk."
+ },
+ {
+   "command": "emote <actor> <emote ID>",
+   "description": "Make the given NPC name perform an emote, which is a little icon shown above the NPC's head. Emotes are stored in Content\\TileSheets\\emotes.xnb (see list of emotes)."
+ },
+ {
+   "command": "end",
+   "description": "Ends the current event by fading out, then resumes the game world and places the player on the square where they entered the zone. All end parameters do this by default unless otherwise stated."
+ },
+ {
+   "command": "end bed",
+   "description": "Same as end, but warps the player to the x/y coordinate of their most recent bed. This does not warp them to the farmhouse, only to the x/y coordinate of the bed regardless of map."
+ },
+ {
+   "command": "end beginGame",
+   "description": "Used only during the introduction sequence in the bus stop event. It sets the game mode to playingGameMode, warps the player to the farmhouse (9, 9), ends the current event, and starts a new day."
+ },
+ {
+   "command": "end credits",
+   "description": "Not used in any normal events. Clears debris weather, changes the music to wedding music, sets game mode to creditsMode and ends the current event."
+ },
+ {
+   "command": "end dialogue <NPC> <\"Text for next chat\">",
+   "description": "Same as end, and additionally clears the existing NPC dialogue for the day and replaces it with the line(s) specified at the end of the command. Example usage: end dialogue Abigail \"It was fun talking to you today.$h\""
+ },
+ {
+   "command": "end dialogueWarpOut <NPC> <\"Text for next chat\">",
+   "description": "See end dialogue and end warpOut."
+ },
+ {
+   "command": "end invisible <NPC>",
+   "description": "Same as end, and additionally turns the specified NPC invisible (cannot be interacted with until the next day)."
+ },
+ {
+   "command": "end invisibleWarpOut <NPC>",
+   "description": "See end invisible and end warpOut."
+ },
+ {
+   "command": "end newDay",
+   "description": "Ends both the event and the day (warping player to their bed, saving the game, selling everything in the shipping box, etc)."
+ },
+ {
+   "command": "end position <x> <y>",
+   "description": "Same as end, and additionally warps the player to the map coordinates specified in x y."
+ },
+ {
+   "command": "end warpOut",
+   "description": "Same as end, and additionally finds the first warp out of the current location (second warp if male and in the bathhouse), and warps the player to its endpoint."
+ },
+ {
+   "command": "end wedding",
+   "description": "Used only in the hardcoded wedding event. Changes the character's clothes back to normal, sets Lewis' post-event chat to \"That was a beautiful ceremony. Congratulations!$h\", and warps the player to their farm."
+ },
+ {
+   "command": "extendSourceRect <actor> reset",
+   "description": "Resets the actors sprite."
+ },
+ {
+   "command": "extendSourceRect <actor> <horizontal> <vertical> [ignoreUpdates]",
+   "description": "TODO: Explain Character.extendSourceRect"
+ },
+ {
+   "command": "eyes <eyes> <blink>",
+   "description": "Change the player's eyes. Eyes is represented by and Integer from 0 - 5 (open, closed, right, left, half closed, wide open).  Blink is a timer that is represented with a negative number. -1000 is the default timer."
+ },
+ {
+   "command": "faceDirection <actor> <direction> [continue]",
+   "description": "Make a named NPC face a direction. If no parameter is supplied for [continue], the game will pause."
+ },
+ {
+   "command": "fade [unfade]",
+   "description": "Fades out to black if no parameter is supplied. If the parameter is unfade (not true), fades in from black."
+ },
+ {
+   "command": "farmerAnimation <anim>",
+   "description": "Briefly sets the farmer's sprite to <anim> for a variable (depending on sprite) interval. Only used once in vanilla events. Using showFrame farmer <sprite> twice (to set a new frame and back) is more powerful as it lets you control the interval using pause n."
+ },
+ {
+   "command": "farmerEat <object ID>",
+   "description": "Make the player eat an object"
+ },
+ {
+   "command": "fork [req] <event ID>",
+   "description": "End the current command script and starts a different script with the given ID, but only if the [req] condition is met. (Example: /fork choseWizard finalBossWizard in the \"Necromancer\" script of Sebastian's 6-heart event.) The [req] condition can be a mail ID or dialogue answer ID; if not specified, it checks if the specialEventVariable1 variable was set (e.g. by a question event command or %fork dialogue command). The new script should have the same format as a normal event script, but without the mandatory three start fields."
+ },
+ {
+   "command": "friendship <npc> <amount>",
+   "description": "Add the given number of friendship points with the named NPC. (There are 250 points per heart.)"
+ },
+ {
+   "command": "globalFade [speed]",
+   "description": "Fade to black at a particular speed (default 0.007). If no speed is specified, the event will continue immediately; otherwise, it will continue after the fade is finished. The fade effect disappears when this command is done; to avoid that, use the viewport command to move the camera off-screen."
+ },
+ {
+   "command": "globalFadeToClear [speed]",
+   "description": "Fade to clear (unfade?) at a particular speed (default 0.007). If no speed is specified, the event will continue immediately; otherwise, it will continue after the fade is finished."
+ },
+ {
+   "command": "glow <r> <g> <b> <hold>",
+   "description": "Make the screen glow once, fading into and out of the <r> <g> <b> values over the course of a second. If <hold> is true it will fade to and hold that color until stopGlowing is used."
+ },
+ {
+   "command": "grandpaCandles",
+   "description": "Do grandpa candles"
+ },
+ {
+   "command": "grandpaEvaluation",
+   "description": "Do grandpa evaluation"
+ },
+ {
+   "command": "grandpaEvaluation2",
+   "description": "Do grandpa evaluation (manually resummoned)"
+ },
+ {
+   "command": "halt",
+   "description": "Make everyone stop."
+ },
+ {
+   "command": "hospitaldeath",
+   "description": ""
+ },
+ {
+   "command": "ignoreCollisions <character ID>",
+   "description": "Make a character ignore collisions when moving for the remainder of the event. For example, they'll walk through walls if needed to reach their destination. The character ID can be farmer or an NPC name like Abigail."
+ },
+ {
+   "command": "itemAboveHead [type]",
+   "description": "Show an item above the player's head. The [type] can be \"pan\", \"hero\", \"sculpture\", \"joja\", \"slimeEgg\", \"rod\", \"sword\", or \"ore\". If no item is specified, then they will 'hold' nothing?"
+ },
+ {
+   "command": "jump <actor> [intensity]",
+   "description": "Make a the named NPC jump. The default intensity is 8."
+ },
+ {
+   "command": "loadActors <layer>",
+   "description": "Load the actors from a layer in the map file."
+ },
+ {
+   "command": "makeInvisible <x> <y> [x-dimension] [y-dimension]",
+   "description": "Temporarily hides selected objects or terrain features: the tile(s) will become passable for the duration of the event. Useful for clearing a walking area during events, especially in the FarmHouse. (Example: /makeInvisible 8 14 hides any object or terrain feature at tile 8, 14 in the current map.) The optional [x-dimension] and [y-dimension] arguments allow you to specify a larger area to be cleared. (Example: /makeInvisible 68 36 13 7 in Leah's 14-heart event clears a 13 × 7 tile rectangular area with the top-left corner at coordinate 68, 36.)"
+ },
+ {
+   "command": "mail <letter ID>",
+   "description": "Queue a letter to be received tomorrow (see Content\\Data\\mail.xnb for available mail)."
+ },
+ {
+   "command": "message <\"text\">",
+   "description": "Show a dialogue box (no speaker). See dialogue format for the <text> format."
+ },
+ {
+   "command": "minedeath",
+   "description": "TODO."
+ },
+ {
+   "command": "move <actor> <x> <y> <facing> <continue>",
+   "description": "Make a named NPC move by the given tile offset from their current position (along one axis only), and face the given direction when they're done. To move along multiple axes, you must specify multiple move commands. By default the event pauses while a move command is occurring, but if <continue> is set to true the movement is asynchronous and will run simultaneously with other event commands."
+ },
+ {
+   "command": "pause <duration>",
+   "description": "Pause the game for the given number of milliseconds."
+ },
+ {
+   "command": "playMusic <track>",
+   "description": "Play the specified music track ID. If the track is 'samBand', the track played will change depend on certain dialogue answers (76-79)."
+ },
+ {
+   "command": "playSound <sound>",
+   "description": "Play a given sound ID from the game's sound bank."
+ },
+ {
+   "command": "playerControl",
+   "description": "Give the player control back."
+ },
+ {
+   "command": "positionOffset <actor> <x> <y>",
+   "description": "Offset the position of the named NPC by the given number of pixels. This happens instantly, with no walking animation."
+ },
+ {
+   "command": "proceedPosition <actor>",
+   "description": "TODO: Explain"
+ },
+ {
+   "command": "question null \"<question>#<answer1>#<answer2>\"",
+   "description": "Show a dialogue box with some answers and an optional question. When the player chooses an answer, the event script continues with no other effect."
+ },
+ {
+   "command": "question fork<answer index> \"<question>#<answer 0>#<answer 1>#...\"",
+   "description": "Show a dialogue with some answers and an optional question. When the player chooses the answer matching the fork<answer index> (like fork0 for the first answer), the specialEventVariable1 variable is set. Usually followed by a fork command."
+ },
+ {
+   "command": "quickquestion \"#<question1>#<question2>#<question3>(break)<command>#<answer1 script>(break)<answer2 script>(break)<answer3 script>\\\\\"",
+   "description": "Show a dialogue box with some answers and an optional question. When the player chooses an answer, the event script continues with no other effect."
+ },
+ {
+   "command": "removeItem <object ID>",
+   "description": "Remove the first of an object from a player's inventory."
+ },
+ {
+   "command": "removeObject <x> <y>",
+   "description": "Remove the prop at a position."
+ },
+ {
+   "command": "removeQuest <quest ID>",
+   "description": "Remove the specified quest from the quest log."
+ },
+ {
+   "command": "removeSprite <x> <y>",
+   "description": "Remove the temporary sprite at a position."
+ },
+ {
+   "command": "removeTemporarySprites",
+   "description": "Remove all temporary sprites."
+ },
+ {
+   "command": "removeTile <x> <y> <layer>",
+   "description": "Remove a tile from the specified layer."
+ },
+ {
+   "command": "resetVariable",
+   "description": "Set the first event variable to false."
+ },
+ {
+   "command": "rustyKey",
+   "description": "Gives the player the rusty key. (Sewer key)"
+ },
+ {
+   "command": "screenFlash <alpha>",
+   "description": "Flashes the screen white for an instant. An alpha value from 0 to 1 adjusts the brightness, and values from 1 and out flashes pure white for x seconds."
+ },
+ {
+   "command": "setRunning",
+   "description": "Set the player as running."
+ },
+ {
+   "command": "shake <actor> <duration>",
+   "description": "Shake the named NPC for the given number of milliseconds."
+ },
+ {
+   "command": "showFrame farmer flip",
+   "description": "Flip the farmer's current sprite along the Y axis. TODO: Behavior with farmer looks strange?"
+ },
+ {
+   "command": "showFrame <actor> <frame ID>",
+   "description": "Set the named NPC's current frame in their Content\\Characters\\*.xnb spritesheet. Note that setting the farmer's sprite only changes parts of the sprite (some times arms, some times arms and legs and torso but not the head, etc). To rotate the whole sprite, use faceDirection farmer <0/1/2/3> first before modifying the sprite with showFrame. Frame ID starts from 0. If farmer is the one whose frame is being set, \"farmer\" can be eliminated, i.e. both showFrame farmer <frame ID> and showFrame <frame ID> would work."
+ },
+ {
+   "command": "showRivalFrame <frame>",
+   "description": "Set the 'rival' actor's sprite to a specific frame."
+ },
+ {
+   "command": "skippable",
+   "description": "Allow skipping this event."
+ },
+ {
+   "command": "speak <character> <\"text\">",
+   "description": "Show dialogue text from a named NPC; see dialogue format."
+ },
+ {
+   "command": "specificTemporarySprite <sprite> [other params]",
+   "description": "Shows the given temporary sprite. Parameters change depending on the sprite."
+ },
+ {
+   "command": "speed farmer <modifier>",
+   "description": "Add a speed modifier to the farmer. Is persistent and you will have to use the command again to return to normal speed."
+ },
+ {
+   "command": "speed <actor> <speed>",
+   "description": "Sets the named NPC's speed (default speed is 3). Not applicable to the farmer. Applies only through the end of the next movement or animation on that NPC."
+ },
+ {
+   "command": "splitSpeak <actor> <\"text\">",
+   "description": "Dialogue, but chosen based on previous answer. ('~' is the separator used.)"
+ },
+ {
+   "command": "startJittering",
+   "description": "Make the player start jittering."
+ },
+ {
+   "command": "stopAdvancedMoves",
+   "description": "Stop movement from advancedMove."
+ },
+ {
+   "command": "stopAnimation farmer",
+   "description": "Stop the farmer's current animation."
+ },
+ {
+   "command": "stopAnimation <actor> <end frame>",
+   "description": "Stop the named NPC's current animation. Not applicable to the farmer."
+ },
+ {
+   "command": "stopGlowing",
+   "description": "Make the screen stop glowing."
+ },
+ {
+   "command": "stopJittering",
+   "description": "Make the player stop jittering."
+ },
+ {
+   "command": "stopMusic",
+   "description": "Stop any currently playing music."
+ },
+ {
+   "command": "stopRunning",
+   "description": "Make the farmer stop running."
+ },
+ {
+   "command": "stopSwimming <actor>",
+   "description": "Make an actor stop swimming."
+ },
+ {
+   "command": "swimming <actor>",
+   "description": "Make an actor start swimming."
+ },
+ {
+   "command": "switchEvent <event ID>",
+   "description": "Changes the current event (ie. event commands) to another event in the same location."
+ },
+ {
+   "command": "taxvote",
+   "description": "Trigger voting for or against a 3% shipping tax. (No effect on game?)"
+ },
+ {
+   "command": "temporarySprite <x> <y> <row in texture> <animation length> <animation interval> <flipped> <layer depth>",
+   "description": "Create a temporary sprite with the given parameters."
+ },
+ {
+   "command": "textAboveHead <actor> \"<text>\"",
+   "description": "Show a small text bubble over the named NPC's head with the given text; see dialogue format."
+ },
+ {
+   "command": "tutorialMenu",
+   "description": "Show the tutorial menu if no other menu is open."
+ },
+ {
+   "command": "updateMinigame <event data>",
+   "description": "Send an event to the current minigame."
+ },
+ {
+   "command": "viewport move <x> <y> <duration>",
+   "description": "Pan the the camera in the direction (and with the velocity) defined by x/y for the given duration in milliseconds. Example: \"viewport move 2 -1 5000\" moves the camera 2 pixels right and 1 pixel up for 5 seconds."
+ },
+ {
+   "command": "viewport <x> <y> [true [unfreeze]|clamp [true|unfreeze]]",
+   "description": "Instantly reposition the camera to center on the given X, Y tile position. TODO: explain other parameters."
+ },
+ {
+   "command": "waitForKey <key> <message on finish>",
+   "description": "TODO: Explain"
+ },
+ {
+   "command": "waitForOtherPlayers",
+   "description": "Wait for other players (vanilla MP)."
+ },
+ {
+   "command": "warp <actor> <x> <y>",
+   "description": "Warp the named NPC to a position to the given X, Y tile coordinate. This can be used to warp characters off-screen."
+ },
+ {
+   "command": "weddingSprite <frame>",
+   "description": "Sets the actor known as 'WeddingOutfits' to a particular frame."
+ }
+]

@@ -1,0 +1,17 @@
+[
+ {
+   "index": 0,
+   "syntax": "<music ID>",
+   "description": "The background music or ambient background track to play. Can be changed later using playMusic <newmusic>, or stopped entirely using stopMusic. This can also be none (which stops any existing music and uses the default ambient background noise for the location), or continue (which keeps playing the current background song)."
+ },
+ {
+   "index": 1,
+   "syntax": "<x> <y>",
+   "description": "The tile coordinates the camera should center on at the start of the event."
+ },
+ {
+   "index": 2,
+   "syntax": "[<character ID> <x> <y> <direction>]+",
+   "description": "Initialises one or more characters' starting tile positions and directions. The character ID can be farmer or an NPC name like Abigail."
+ }
+]
