@@ -11,7 +11,7 @@ import { Logo } from "./Logo"
 
 // Libraries
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Routes,
   Route,
   Link as RouterLink
@@ -34,18 +34,18 @@ export const App = () => (
               <BreadcrumbLink as={RouterLink} to="/">home</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <BreadcrumbLink as={RouterLink} to="/eventstudio">event studio</BreadcrumbLink>
+              <BreadcrumbLink as={RouterLink} to="/#/eventstudio">event studio</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <BreadcrumbLink as={RouterLink} to="/mapviewer/Town">map viewer</BreadcrumbLink>
+              <BreadcrumbLink as={RouterLink} to="/#/mapviewer/Town">map viewer</BreadcrumbLink>
             </BreadcrumbItem>
           </Breadcrumb>
         </nav>
 
         <Routes>
           <Route path="/" element={<Home/>} />
-          <Route path="/eventstudio" element={<EventStudio/>} />
-          <Route path="/mapviewer/:mapname" element={<TileMapViewer/>} />
+          <Route path="/#/eventstudio" element={<EventStudio/>} />
+          <Route path="/#/mapviewer/:mapname" element={<TileMapViewer/>} />
         </Routes>
       </div>
     </Router>
