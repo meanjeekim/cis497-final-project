@@ -11,7 +11,7 @@ import { Logo } from "./Logo"
 
 // Libraries
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
   Link as RouterLink
